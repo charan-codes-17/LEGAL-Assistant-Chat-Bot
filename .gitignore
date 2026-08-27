@@ -1,0 +1,20 @@
+# Secrets and Environment
+.env
+.env.local
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Streamlit
+.streamlit/
+
+# Vector store cache
+vector_store/*.npy
+vector_store/*.pkl
+
+# OS files
+.DS_Store
+Thumbs.db

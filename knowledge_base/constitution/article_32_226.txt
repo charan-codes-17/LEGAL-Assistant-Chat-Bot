@@ -1,0 +1,20 @@
+[SOURCE_ID: CONST-ART-32-226]
+[TITLE: Constitution of India — Articles 32 and 226: Remedies for Enforcement of Rights (Writs including Habeas Corpus)]
+[AUTHORITY: Supreme Court of India & High Courts]
+[URL: https://lddashboard.nic.in/sites/default/files/coi-4March2016.pdf]
+
+TEXT OF PROVISIONS:
+Article 32: Remedies for enforcement of rights conferred by Part III (Fundamental Rights).
+"The right to move the Supreme Court by appropriate proceedings for the enforcement of the rights conferred by this Part is guaranteed."
+Dr. B.R. Ambedkar called Article 32 the "heart and soul of the Constitution".
+
+Article 226: Power of High Courts to issue certain writs.
+High Courts have the jurisdiction to issue directions, orders, or writs (including Habeas Corpus, Mandamus, Prohibition, Quo Warranto, and Certiorari) for the enforcement of Fundamental Rights and for any other purpose.
+
+WRIT OF HABEAS CORPUS ("TO HAVE THE BODY"):
+1. Purpose: A judicial remedy against unlawful, arbitrary, or unauthorized detention by the State (police) or private entities.
+2. Direct Remedy for Illegal Detention: If a person is detained by police without being informed of grounds, without legal authority, or not produced before a magistrate within 24 hours, an immediate Writ Petition of Habeas Corpus can be filed under:
+   - Article 226 before the jurisdictional High Court.
+   - Article 32 before the Supreme Court of India.
+3. Standing (Locus Standi): The petition can be filed not only by the detained person but also by any friend, relative, or advocate acting on their behalf (relaxed locus standi).
+4. Consequence: The High Court or Supreme Court commands the detaining authority to produce the person before the court and show legal justification. If detention is found unlawful, the court will order immediate release and may grant compensation for violation of Article 21 (Rudal Sah v. State of Bihar, 1983; Bhim Singh v. State of J&K, 1985).

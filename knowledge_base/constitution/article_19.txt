@@ -1,0 +1,23 @@
+[SOURCE_ID: CONST-ART-19]
+[TITLE: Constitution of India — Article 19: Protection of Certain Rights regarding Freedom of Speech, etc.]
+[AUTHORITY: Government of India / Legislative Department]
+[URL: https://lddashboard.nic.in/sites/default/files/coi-4March2016.pdf]
+
+TEXT OF PROVISION:
+Article 19(1): All citizens shall have the right—
+(a) to freedom of speech and expression;
+(b) to assemble peaceably and without arms;
+(c) to form associations or unions or co-operative societies;
+(d) to move freely throughout the territory of India;
+(e) to reside and settle in any part of the territory of India; and
+(g) to practise any profession, or to carry on any occupation, trade or business.
+
+LEGAL PRINCIPLES AND RESTRICTIONS:
+1. Citizen Exclusivity: The rights guaranteed under Article 19 are available only to citizens of India, unlike Articles 14, 20, 21, and 22 which are available to all persons.
+2. Reasonable Restrictions: The freedoms under Article 19 are not absolute. The State can impose reasonable restrictions under clauses (2) through (6) on grounds such as:
+   - Sovereignty and integrity of India
+   - Security of the State
+   - Friendly relations with foreign States
+   - Public order, decency, or morality
+   - Contempt of court, defamation, or incitement to an offence.
+3. Procedural Interconnection: Restrictions imposed on individual freedoms must satisfy the test of reasonableness under Article 14 and substantive fairness under Article 21.

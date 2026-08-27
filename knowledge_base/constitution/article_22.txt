@@ -1,0 +1,20 @@
+[SOURCE_ID: CONST-ART-22]
+[TITLE: Constitution of India — Article 22: Protection Against Arrest and Detention in Certain Cases]
+[AUTHORITY: Government of India / Legislative Department]
+[URL: https://lddashboard.nic.in/sites/default/files/coi-4March2016.pdf]
+
+TEXT OF PROVISION:
+Article 22(1): "No person who is arrested shall be detained in custody without being informed, as soon as may be, of the grounds for such arrest nor shall he be denied the right to consult, and to be defended by, a legal practitioner of his choice."
+
+Article 22(2): "Every person who is arrested and detained in custody shall be produced before the nearest magistrate within a period of twenty-four hours of such arrest excluding the time necessary for the journey from the place of arrest to the court of the magistrate and no such person shall be detained in custody beyond the said period without the authority of a magistrate."
+
+FOUR CORE CONSTITUTIONAL SAFEGUARDS UNDER ARTICLE 22:
+1. Right to be informed of the grounds of arrest: The arresting authority must communicate the specific grounds/reasons for arrest as soon as possible so the detainee can seek bail or challenge the detention.
+2. Right to consult and be defended by a legal practitioner: The arrested individual has the constitutional right to consult and be represented by a lawyer of their own choice.
+3. Mandatory 24-hour production before the nearest Magistrate: The police cannot keep an arrested person in custody exceeding 24 hours (excluding transit journey time) without producing them before a judicial magistrate.
+4. Prohibition of unauthorized detention: Detention beyond 24 hours without an explicit judicial remand order from a magistrate is unconstitutional and illegal detention, violating Articles 21 and 22.
+
+EXCEPTIONS UNDER ARTICLE 22(3):
+The safeguards under clauses (1) and (2) do not apply to:
+- Any person who is an enemy alien.
+- Any person arrested or detained under any law providing for preventive detention (subject to separate safeguards under clauses 4-7 such as advisory board review).

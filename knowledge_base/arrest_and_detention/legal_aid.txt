@@ -1,0 +1,29 @@
+[SOURCE_ID: LEGAL-AID-ART-39A]
+[TITLE: Constitution of India Article 39A & Legal Services Authorities Act, 1987 — Right to Free Legal Aid]
+[AUTHORITY: National Legal Services Authority (NALSA) / Ministry of Law and Justice]
+[URL: https://nalsa.gov.in/]
+
+CONSTITUTIONAL & STATUTORY FOUNDATION:
+1. Article 39A (Directive Principles of State Policy):
+   "The State shall secure that the operation of the legal system promotes justice, on a basis of equal opportunity, and shall, in particular, provide free legal aid, by suitable legislation or schemes or in any other way, to ensure that opportunities for securing justice are not denied to any citizen by reason of economic or other disabilities."
+
+2. Right Recognized as Fundamental Right under Article 21:
+   In Hussainara Khatoon v. Home Secretary, State of Bihar (1979) and Khatri (II) v. State of Bihar (1981), the Supreme Court ruled that the provision of free legal services to an indigent or poor accused person is a constitutional right implicit in Article 21, and the Magistrate / Judge is under a mandatory obligation to inform the accused of this right at the time of initial production.
+
+3. Legal Services Authorities Act, 1987 (NALSA):
+   Established a nationwide statutory hierarchy to provide free and competent legal services:
+   - National Legal Services Authority (NALSA) at the Apex level.
+   - State Legal Services Authority (SLSA) in every State.
+   - District Legal Services Authority (DLSA) in every District Court.
+   - Taluk Legal Services Committees (TLSC).
+
+WHO IS ENTITLED TO FREE LEGAL AID:
+Under Section 12 of the Act, free legal aid is available to:
+- Persons in custody or detention
+- Members of Scheduled Castes (SC) and Scheduled Tribes (ST)
+- Women and children
+- Victims of human trafficking or beggar
+- Persons with disabilities
+- Victims of mass disasters, ethnic violence, caste atrocities, flood, drought, earthquake or industrial disaster
+- Industrial workmen
+- Persons whose annual income is below statutory limits prescribed by the State Government.

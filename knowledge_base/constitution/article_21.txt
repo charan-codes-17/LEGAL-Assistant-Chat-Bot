@@ -1,0 +1,23 @@
+[SOURCE_ID: CONST-ART-21]
+[TITLE: Constitution of India — Article 21: Protection of Life and Personal Liberty]
+[AUTHORITY: Government of India / Legislative Department]
+[URL: https://lddashboard.nic.in/sites/default/files/coi-4March2016.pdf]
+
+TEXT OF PROVISION:
+Article 21: Protection of life and personal liberty.
+"No person shall be deprived of his life or personal liberty except according to procedure established by law."
+
+CORE LEGAL PRINCIPLES AND JURISPRUDENCE:
+1. Universal Protection: Article 21 is a fundamental right guaranteed to EVERY person (citizens and non-citizens alike). It is recognized as the heart and soul of fundamental rights in India.
+2. Procedure Established by Law vs. Due Process:
+   - In A.K. Gopalan v. State of Madras (1950), the Supreme Court originally took a narrow, literal interpretation.
+   - In the historic landmark ruling Maneka Gandhi v. Union of India (1978) 1 SCC 248, the Supreme Court overruled the narrow view and held that "procedure established by law" must be "just, fair, and reasonable" and not arbitrary, fanciful, or oppressive. This incorporated the substantive doctrine of "due process of law" into Article 21.
+3. Expanded Horizons of Article 21:
+   Through judicial interpretation, the right to life means more than mere animal existence; it includes the right to live with human dignity (Francis Coralie Mullin v. Administrator, Union Territory of Delhi, 1981).
+   Derived rights include:
+   - Right to privacy (K.S. Puttaswamy v. Union of India, 2017)
+   - Right to speedy trial (Hussainara Khatoon v. Home Secretary, State of Bihar, 1979)
+   - Right to free legal aid (Hussainara Khatoon; Khatri v. State of Bihar)
+   - Protection against inhuman treatment and custodial violence (D.K. Basu v. State of West Bengal, 1997)
+   - Right to clean environment and health (Subhash Kumar v. State of Bihar, 1991).
+4. Non-Suspendable Character: Under Article 359 (amended by the 44th Constitutional Amendment Act, 1978), the right to move any court for the enforcement of Article 21 cannot be suspended even during a National Emergency.

@@ -1,0 +1,103 @@
+{
+  "sources": [
+    {
+      "id": "CONST-ART-14",
+      "title": "Constitution of India — Article 14: Equality before Law",
+      "provision": "Article 14",
+      "jurisdiction": "India",
+      "topic": "Fundamental Rights — Right to Equality",
+      "authority": "Government of India / Legislative Department",
+      "url": "https://lddashboard.nic.in/sites/default/files/coi-4March2016.pdf",
+      "official": true,
+      "retrieved_date": "2026-08-27"
+    },
+    {
+      "id": "CONST-ART-19",
+      "title": "Constitution of India — Article 19: Protection of Certain Rights regarding Freedom of Speech, etc.",
+      "provision": "Article 19",
+      "jurisdiction": "India",
+      "topic": "Fundamental Rights — Right to Freedom",
+      "authority": "Government of India / Legislative Department",
+      "url": "https://lddashboard.nic.in/sites/default/files/coi-4March2016.pdf",
+      "official": true,
+      "retrieved_date": "2026-08-27"
+    },
+    {
+      "id": "CONST-ART-21",
+      "title": "Constitution of India — Article 21: Protection of Life and Personal Liberty",
+      "provision": "Article 21",
+      "jurisdiction": "India",
+      "topic": "Fundamental Rights — Right to Life and Personal Liberty",
+      "authority": "Government of India / Legislative Department",
+      "url": "https://lddashboard.nic.in/sites/default/files/coi-4March2016.pdf",
+      "official": true,
+      "retrieved_date": "2026-08-27"
+    },
+    {
+      "id": "CONST-ART-22",
+      "title": "Constitution of India — Article 22: Protection Against Arrest and Detention in Certain Cases",
+      "provision": "Article 22",
+      "jurisdiction": "India",
+      "topic": "Fundamental Rights — Arrest and Preventive Detention Safeguards",
+      "authority": "Government of India / Legislative Department",
+      "url": "https://lddashboard.nic.in/sites/default/files/coi-4March2016.pdf",
+      "official": true,
+      "retrieved_date": "2026-08-27"
+    },
+    {
+      "id": "CONST-ART-32-226",
+      "title": "Constitution of India — Articles 32 and 226: Remedies for Enforcement of Rights (Writs including Habeas Corpus)",
+      "provision": "Articles 32 and 226",
+      "jurisdiction": "India",
+      "topic": "Constitutional Remedies — Judicial Review & Writs",
+      "authority": "Supreme Court of India & High Courts",
+      "url": "https://lddashboard.nic.in/sites/default/files/coi-4March2016.pdf",
+      "official": true,
+      "retrieved_date": "2026-08-27"
+    },
+    {
+      "id": "CRPC-ARREST-RIGHTS",
+      "title": "Code of Criminal Procedure, 1973 (CrPC) / Bharatiya Nagarik Suraksha Sanhita, 2023 (BNSS) — Statutory Rights on Arrest",
+      "provision": "CrPC Sections 41, 41B, 41D, 50, 50A, 54 & 57 / BNSS Sections 35, 36, 38, 47, 48, 53 & 57",
+      "jurisdiction": "India",
+      "topic": "Criminal Procedure — Arrest Procedure, Grounds, Memo & Intimation",
+      "authority": "Ministry of Law and Justice, Government of India",
+      "url": "https://www.indiacode.nic.in/handle/123456789/1611",
+      "official": true,
+      "retrieved_date": "2026-08-27"
+    },
+    {
+      "id": "CRPC-MAGISTRATE-24HR",
+      "title": "CrPC Section 57 & Section 167 / Article 22(2) — Mandatory Production Before Magistrate Within 24 Hours",
+      "provision": "CrPC Sec 57, 167(2) / BNSS Sec 58, 187 / Art 22(2)",
+      "jurisdiction": "India",
+      "topic": "Criminal Procedure — Limit on Police Custody without Judicial Order",
+      "authority": "Ministry of Law and Justice, Government of India",
+      "url": "https://www.indiacode.nic.in/handle/123456789/1611",
+      "official": true,
+      "retrieved_date": "2026-08-27"
+    },
+    {
+      "id": "LEGAL-AID-ART-39A",
+      "title": "Constitution of India Article 39A & Legal Services Authorities Act, 1987 — Right to Free Legal Aid",
+      "provision": "Article 39A / Act No. 39 of 1987 (NALSA)",
+      "jurisdiction": "India",
+      "topic": "Legal Aid — Equal Justice and Free Legal Assistance",
+      "authority": "National Legal Services Authority (NALSA) / Ministry of Law and Justice",
+      "url": "https://nalsa.gov.in/",
+      "official": true,
+      "retrieved_date": "2026-08-27"
+    },
+    {
+      "id": "SC-DK-BASU-GUIDELINES",
+      "title": "Supreme Court of India Landmark Judgment: D.K. Basu v. State of West Bengal (1997) 1 SCC 416",
+      "provision": "Arrest and Custodial Detention Guidelines",
+      "jurisdiction": "India",
+      "topic": "Custodial Justice — Mandatory Directives for Arresting Officers",
+      "authority": "Supreme Court of India",
+      "url": "https://main.sci.gov.in/judgment",
+      "official": true,
+      "retrieved_date": "2026-08-27"
+    }
+  ]
+}

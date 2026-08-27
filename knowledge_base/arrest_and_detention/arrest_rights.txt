@@ -1,0 +1,29 @@
+[SOURCE_ID: CRPC-ARREST-RIGHTS]
+[TITLE: Code of Criminal Procedure, 1973 (CrPC) / Bharatiya Nagarik Suraksha Sanhita, 2023 (BNSS) — Statutory Rights on Arrest]
+[AUTHORITY: Ministry of Law and Justice, Government of India]
+[URL: https://www.indiacode.nic.in/handle/123456789/1611]
+
+STATUTORY POWERS AND LIMITATIONS ON POLICE ARREST:
+1. Police CANNOT Arrest Arbitrarily Without Legal Grounds (CrPC Section 41 / BNSS Section 35):
+   Under Indian law, police officers do NOT have unrestricted or arbitrary power to arrest any person at any time without reason or evidence.
+   - For cognizable offences punishable with imprisonment up to 7 years, arrest is NOT automatic. Police must have "credible information" or "reasonable suspicion" and must satisfy specific statutory criteria (e.g., to prevent further offence, prevent tampering with evidence, or ensure appearance in court).
+   - In Arnesh Kumar v. State of Bihar (2014) 8 SCC 273, the Supreme Court mandated that police must record reasons in writing for making or not making an arrest, and unauthorized arrests subject the officer to departmental and contempt proceedings.
+   - For non-cognizable offences, police cannot arrest without a warrant issued by a magistrate (CrPC Sec 41(2) / Sec 155(2)).
+
+2. Mandatory Right to Know Grounds of Arrest & Bail Eligibility (CrPC Section 50 / BNSS Section 47):
+   - Every police officer arresting any person without warrant must immediately communicate full particulars of the offence or other grounds for such arrest.
+   - Where an offence is bailable, the officer MUST immediately inform the person of their right to be released on bail and arrange for sureties.
+
+3. Mandatory Memo of Arrest (CrPC Section 41B / BNSS Section 36):
+   - The arresting officer must prepare a formal "Memorandum of Arrest" at the time of arrest.
+   - The memo must be attested by at least one witness (a family member or a respectable member of the locality) and countersigned by the arrested person.
+
+4. Mandatory Intimation to Family or Friend (CrPC Section 50A / BNSS Section 48):
+   - The police must immediately inform a friend, relative, or person nominated by the arrested person about the arrest and the location/police station where the person is detained.
+   - An entry must be made in the police station diary.
+
+5. Right to Consult and Meet an Advocate (CrPC Section 41D / BNSS Section 38):
+   - An arrested person has the right to meet and consult an advocate of their choice during interrogation, though not throughout the interrogation.
+
+6. Mandatory Right to Medical Examination (CrPC Section 54 / BNSS Section 53):
+   - An arrested person must be medically examined by a registered medical officer immediately after arrest to record physical condition and any pre-existing injuries, establishing safeguards against custodial violence.

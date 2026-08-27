@@ -1,0 +1,20 @@
+[SOURCE_ID: CRPC-MAGISTRATE-24HR]
+[TITLE: CrPC Section 57 & Section 167 / Article 22(2) — Mandatory Production Before Magistrate Within 24 Hours]
+[AUTHORITY: Ministry of Law and Justice, Government of India]
+[URL: https://www.indiacode.nic.in/handle/123456789/1611]
+
+STATUTORY PROVISIONS ON 24-HOUR CUSTODY LIMIT:
+1. CrPC Section 57 (BNSS Section 58): Person arrested not to be detained more than twenty-four hours.
+   "No police officer shall detain in custody a person arrested without warrant for a longer period than under all the circumstances of the case is reasonable, and such period shall not, in the absence of a special order of a Magistrate under section 167, exceed twenty-four hours exclusive of the time necessary for the journey from the place of arrest to the Magistrate's Court."
+
+2. CrPC Section 167 (BNSS Section 187): Procedure when investigation cannot be completed in twenty-four hours.
+   - If investigation cannot be completed within 24 hours and there are grounds for believing the accusation is well-founded, the officer in charge must forward the accused to the nearest Judicial Magistrate, together with a copy of the case diary entries.
+   - Only a judicial magistrate can authorize further detention (police custody or judicial custody).
+
+CONSEQUENCES OF VIOLATION (FAILURE TO PRODUCE WITHIN 24 HOURS):
+1. The detention becomes illegal and unconstitutional from the 25th hour onward, constituting a violation of Article 21 and Article 22(2).
+2. The detaining police officer is guilty of wrongful confinement under the Indian Penal Code (IPC Section 342 / Bharatiya Nyaya Sanhita Section 127).
+3. The detainee or their relatives are entitled to immediately invoke:
+   - Habeas Corpus writ petition before the High Court (Art. 226) or Supreme Court (Art. 32).
+   - Application before the Chief Judicial Magistrate / Sessions Judge for immediate release.
+   - Constitutional tort compensation against the State for illegal detention (Supreme Court in State of Maharashtra v. Christian Community Welfare Council, and Bhim Singh v. State of J&K).

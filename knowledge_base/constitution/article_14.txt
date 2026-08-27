@@ -1,0 +1,16 @@
+[SOURCE_ID: CONST-ART-14]
+[TITLE: Constitution of India — Article 14: Equality before Law]
+[AUTHORITY: Government of India / Legislative Department]
+[URL: https://lddashboard.nic.in/sites/default/files/coi-4March2016.pdf]
+
+TEXT OF PROVISION:
+Article 14: Equality before law.
+"The State shall not deny to any person equality before the law or the equal protection of the laws within the territory of India."
+
+LEGAL PRINCIPLES AND INTERPRETATION:
+1. Scope and Applicability: Article 14 applies to all persons, whether citizens or non-citizens, natural persons or legal entities.
+2. Two Core Concepts:
+   - "Equality before the law": A negative concept borrowed from English common law declaring that no individual is above the law and all persons are subject to the ordinary law of the land.
+   - "Equal protection of the laws": A positive concept borrowed from the 14th Amendment of the US Constitution demanding equal treatment under equal circumstances.
+3. Prohibition of Arbitrariness: In landmark rulings such as E.P. Royappa v. State of Tamil Nadu (1974) and Maneka Gandhi v. Union of India (1978), the Supreme Court established that Article 14 strikes at arbitrariness in State action. State action must be reasonable, non-discriminatory, and fair.
+4. Golden Triangle: Article 14, Article 19, and Article 21 together form the "Golden Triangle" of the Indian Constitution, reinforcing that any procedure depriving a person of liberty must be just, fair, and reasonable, and not arbitrary.
