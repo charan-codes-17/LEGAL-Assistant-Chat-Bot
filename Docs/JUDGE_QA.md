@@ -1,6 +1,6 @@
 # Comprehensive Judge Q&A Guide (20 Questions)
 **Event**: BUILD-A-BOT Competition (Data Intelligence Club, Dept of AI, Thiagarajar College of Engineering)  
-**Domain**: Indian Legal Assistant (NyayaSahayak)  
+**Domain**: Indian Legal Assistant (LUMA)  
 
 ---
 

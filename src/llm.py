@@ -64,7 +64,7 @@ class LLMClient:
         headers = {
             "Authorization": f"Bearer {api_key.strip()}",
             "HTTP-Referer": "http://localhost:8501",
-            "X-Title": "NyayaSahayak Legal Chatbot",
+            "X-Title": "LUMA Legal Chatbot",
             "Content-Type": "application/json",
         }
 

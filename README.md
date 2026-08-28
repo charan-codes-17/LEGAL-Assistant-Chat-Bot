@@ -1,4 +1,4 @@
-# ⚖️ NyayaSahayak — Indian Legal Information Assistant
+# ⚖️ LUMA — Indian Legal Information Assistant
 > **BUILD-A-BOT Competition Entry**  
 > **Organized by**: Data Intelligence Club, Department of Artificial Intelligence, Thiagarajar College of Engineering  
 > **Theme**: Legal Assistant  
@@ -164,7 +164,7 @@ Chat_Bot/
 ---
 
 ## ⚖️ Legal Safety & Ethical Compliance
-NyayaSahayak strictly complies with legal ethics:
+LUMA strictly complies with legal ethics:
 1. Provides **general legal information** and procedural literacy rather than unauthorized legal representation.
 2. Every response includes a standard **legal disclaimer**.
 3. High-risk situations are actively escalated to the **National Legal Services Authority (NALSA helpline 15100)** or licensed advocates.

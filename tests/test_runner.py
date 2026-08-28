@@ -28,7 +28,7 @@ TEST_CSV = ROOT_DIR / "tests" / "test_questions.csv"
 
 def run_evaluation():
     print("=" * 80)
-    print("RUNNING AUTOMATED BENCHMARK EVALUATION — NyayaSahayak Legal Chatbot")
+    print("RUNNING AUTOMATED BENCHMARK EVALUATION — LUMA Legal Chatbot")
     print("=" * 80)
 
     classifier = get_classifier()

@@ -1,6 +1,6 @@
-# NyayaSahayak — Comprehensive System Architecture & Engineering Blueprint
+# LUMA — Comprehensive System Architecture & Engineering Blueprint
 
-> **Target Audience**: AI Agents, Systems Architects, and Software Engineers working on, extending, or refactoring the **NyayaSahayak** codebase.  
+> **Target Audience**: AI Agents, Systems Architects, and Software Engineers working on, extending, or refactoring the **LUMA** codebase.  
 > **Repository Root**: `d:/Chat_Bot/`  
 > **Domain**: Indian Constitutional Law & Criminal Procedure (Arrest & Detention Safeguards)  
 > **Origin**: BUILD-A-BOT AI Technical Competition (Department of Artificial Intelligence & Data Intelligence Club, Thiagarajar College of Engineering)  
@@ -30,7 +30,7 @@
 
 ## 1. Executive Summary & Core Philosophy
 
-**NyayaSahayak** (*"Justice Assistant"*) is a specialized legal information retrieval and question-answering AI system designed to democratize legal awareness under the **Constitution of India** and Indian criminal procedural law (**Code of Criminal Procedure, 1973 / Bharatiya Nagarik Suraksha Sanhita, 2023**).
+**LUMA** (*"Justice Assistant"*) is a specialized legal information retrieval and question-answering AI system designed to democratize legal awareness under the **Constitution of India** and Indian criminal procedural law (**Code of Criminal Procedure, 1973 / Bharatiya Nagarik Suraksha Sanhita, 2023**).
 
 ### Core Design Principles
 1. **Zero Hallucination via Grounded RAG**: Legal answers are synthesized strictly from verified statutory text and landmark Supreme Court judgments.

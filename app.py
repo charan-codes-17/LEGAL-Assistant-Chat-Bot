@@ -1,5 +1,5 @@
 """
-NyayaSahayak — Indian Legal Information Assistant
+LUMA — Indian Legal Information Assistant
 Streamlit Web Application for BUILD-A-BOT Competition
 """
 import streamlit as st
@@ -28,7 +28,7 @@ from src.safety import (
 
 # Page Setup
 st.set_page_config(
-    page_title="NyayaSahayak — Indian Legal Assistant",
+    page_title="LUMA — Indian Legal Assistant",
     page_icon="⚖️",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -132,7 +132,7 @@ st.markdown(
 st.markdown(
     """
     <div class="header-box">
-        <div class="header-title">⚖️ NyayaSahayak — Legal Information Assistant</div>
+        <div class="header-title">⚖️ LUMA — Legal Information Assistant</div>
         <div class="header-sub">
             Grounded Indian Constitutional & Arrest Rights Assistant • Built for <b>BUILD-A-BOT</b> Competition (Dept of AI, TCE)
         </div>
@@ -147,7 +147,7 @@ if "messages" not in st.session_state:
         {
             "role": "assistant",
             "content": (
-                "Namaste! I am **NyayaSahayak**, your verified AI assistant for **Indian Constitutional Rights "
+                "Namaste! I am **LUMA**, your verified AI assistant for **Indian Constitutional Rights "
                 "and Arrest/Detention Safeguards**.\n\n"
                 "You can ask me about:\n"
                 "- **Article 21** (Right to Life & Personal Liberty)\n"
@@ -244,7 +244,7 @@ with st.sidebar:
         st.rerun()
 
     # Chat Export
-    chat_export_text = "# NyayaSahayak Legal Chatbot — Session Transcript\n\n"
+    chat_export_text = "# LUMA Legal Chatbot — Session Transcript\n\n"
     for msg in st.session_state.messages:
         chat_export_text += f"### {msg['role'].upper()}:\n{msg['content']}\n\n"
     st.download_button(

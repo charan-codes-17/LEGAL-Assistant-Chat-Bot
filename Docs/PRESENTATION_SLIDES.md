@@ -1,5 +1,5 @@
 # BUILD-A-BOT Competition Presentation & Demo Deck (< 4 Minutes)
-**Project Title**: NyayaSahayak — Grounded Indian Legal Information Assistant  
+**Project Title**: LUMA — Grounded Indian Legal Information Assistant  
 **Theme**: Legal Assistant  
 **Event**: BUILD-A-BOT (Data Intelligence Club, Dept. of AI, Thiagarajar College of Engineering)  
 **Target Video Duration**: 3 minutes 45 seconds  
@@ -13,7 +13,7 @@
   - LLMs frequently hallucinate legal sections, invent fictional precedents, and give dangerous unauthorized advice.
   - **Our Solution**: A strictly grounded, RAG-driven Indian Legal Assistant with zero-tolerance for hallucination.
 - **Speaker Script (25s)**:
-  > *"Good day respected judges! In India, millions of citizens are unaware of their fundamental rights during police interactions, such as mandatory 24-hour magistrate production or free legal aid. While general LLMs tend to invent non-existent laws and give risky advice, our team built **NyayaSahayak**—a competition-ready, grounded legal assistant designed to provide accurate, verified legal information backed by official statutes and Supreme Court precedents."*
+  > *"Good day respected judges! In India, millions of citizens are unaware of their fundamental rights during police interactions, such as mandatory 24-hour magistrate production or free legal aid. While general LLMs tend to invent non-existent laws and give risky advice, our team built **LUMA**—a competition-ready, grounded legal assistant designed to provide accurate, verified legal information backed by official statutes and Supreme Court precedents."*
 
 ---
 
@@ -46,7 +46,7 @@
   - **Q1**: Confirms Article 21 guarantees right to life & personal liberty, citing *Maneka Gandhi (1978)* and non-suspendability under Art 359.
   - **Q2**: Rebuts the misconception that police can arrest without reason, citing CrPC Sec 41, Sec 50, and *Arnesh Kumar (2014)*.
 - **Speaker Script (30s)**:
-  > *"Let's test the competition challenge questions! In Question 1, the user asks if Article 21 guarantees right to life. NyayaSahayak confirms with the exact constitutional text, citing Maneka Gandhi. In Question 2, it debunks the myth that police can arrest without reasons, citing CrPC Section 41 and the Arnesh Kumar ruling."*
+  > *"Let's test the competition challenge questions! In Question 1, the user asks if Article 21 guarantees right to life. LUMA confirms with the exact constitutional text, citing Maneka Gandhi. In Question 2, it debunks the myth that police can arrest without reasons, citing CrPC Section 41 and the Arnesh Kumar ruling."*
 
 ---
 
@@ -78,7 +78,7 @@
   - Built-in TF-IDF Vector Space runs locally without internet or GPU requirements.
   - 100% live presentation reliability.
 - **Speaker Script (25s)**:
-  > *"Competition presentations often suffer from Wi-Fi drops or API rate limits. NyayaSahayak is engineered with a multi-tiered resilience engine. It runs smoothly with Gemini API, and instantly falls back to a deterministic offline cache and local vector engine if connectivity fails, ensuring zero downtime during live evaluation."*
+  > *"Competition presentations often suffer from Wi-Fi drops or API rate limits. LUMA is engineered with a multi-tiered resilience engine. It runs smoothly with Gemini API, and instantly falls back to a deterministic offline cache and local vector engine if connectivity fails, ensuring zero downtime during live evaluation."*
 
 ---
 
@@ -100,4 +100,4 @@
   - Transparent legal disclaimers and verified citation cards.
   - Future roadmap: Expansion to regional Indian languages (Tamil, Hindi) and voice interface for rural citizens.
 - **Speaker Script (20s)**:
-  > *"In summary, NyayaSahayak is a reliable, grounded, and ethically safeguarded legal assistant ready for real-world impact and competition evaluation. Thank you, and we welcome your questions!"*
+  > *"In summary, LUMA is a reliable, grounded, and ethically safeguarded legal assistant ready for real-world impact and competition evaluation. Thank you, and we welcome your questions!"*

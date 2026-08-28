@@ -13,7 +13,7 @@ STANDARD_LEGAL_DISCLAIMER = (
 
 OUT_OF_DOMAIN_RESPONSE = (
     "⚖️ **Domain Boundary Notice**\n\n"
-    "I am **NyayaSahayak**, an AI assistant specialized strictly in **Indian Constitutional Law and Arrest/Detention Rights**.\n\n"
+    "I am **LUMA**, an AI assistant specialized strictly in **Indian Constitutional Law and Arrest/Detention Rights**.\n\n"
     "Your question is outside the legal domain (e.g., Computer Science, Machine Learning, STEM, or general topics). "
     "I cannot answer questions about machine learning algorithms, programming, or non-legal subjects.\n\n"
     "💡 *Please ask a question related to Indian Constitutional Rights (Articles 14, 19, 21, 22), police arrest procedures, "
