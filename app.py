@@ -28,7 +28,7 @@ from src.safety import (
 
 # Page Setup
 st.set_page_config(
-    page_title="LUMA — Indian Legal Assistant",
+    page_title="LUMA — Legal Understanding with Modern Assistant",
     page_icon="⚖️",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -220,17 +220,16 @@ with st.sidebar:
 
     threshold_slider = st.slider(
         "Evidence Threshold",
-        min_value=0.10,
+        min_value=0.05,
         max_value=0.50,
         value=EVIDENCE_THRESHOLD,
-        step=0.02,
+        step=0.01,
         help="Cosine similarity threshold required to generate an answer and prevent hallucination.",
     )
 
     st.markdown("---")
     st.markdown("### 📚 Knowledge Base Sources")
     retriever = get_retriever()
-    retriever.threshold = threshold_slider
 
     with st.expander(f"Inspect Sources ({len(retriever.sources_catalog)})", expanded=False):
         for sid, src in retriever.sources_catalog.items():
@@ -367,7 +366,11 @@ if query_to_process:
 
             # 4. In-scope legal query -> Vector Retrieval & LLM
             else:
-                retrieval = retriever.retrieve(query_to_process, top_k=TOP_K_CHUNKS)
+                retrieval = retriever.retrieve(
+                    query_to_process,
+                    top_k=TOP_K_CHUNKS,
+                    threshold=threshold_slider,
+                )
                 meta_data["score"] = retrieval["max_score"]
 
                 pref_provider = "offline" if demo_mode else ("openrouter" if provider_choice == "OpenRouter API" else "gemini")

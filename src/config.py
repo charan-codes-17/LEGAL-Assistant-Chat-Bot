@@ -32,7 +32,7 @@ TEMPERATURE = float(os.getenv("TEMPERATURE", "0.1"))
 MAX_OUTPUT_TOKENS = int(os.getenv("MAX_OUTPUT_TOKENS", "1024"))
 
 # Retrieval & Thresholds
-EVIDENCE_THRESHOLD = float(os.getenv("EVIDENCE_THRESHOLD", "0.22"))
+EVIDENCE_THRESHOLD = float(os.getenv("EVIDENCE_THRESHOLD", "0.10"))
 TOP_K_CHUNKS = int(os.getenv("TOP_K_CHUNKS", "3"))
 
 # Demo & Reliability

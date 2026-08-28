@@ -81,24 +81,24 @@ class HybridRetriever:
         url = "Official Legal Portal"
         authority = "Government of India"
 
-        source_match = re.search(r"\[SOURCE_ID:\s*([^\]]+)\]", content)
+        source_match = re.search(r"\[SOURCE_ID:\s*([^\]]+)\]", content, re.IGNORECASE)
         if source_match:
             source_id = source_match.group(1).strip()
 
-        title_match = re.search(r"\[TITLE:\s*([^\]]+)\]", content)
+        title_match = re.search(r"\[TITLE:\s*([^\]]+)\]", content, re.IGNORECASE)
         if title_match:
             title = title_match.group(1).strip()
 
-        url_match = re.search(r"\[URL:\s*([^\]]+)\]", content)
+        url_match = re.search(r"\[URL:\s*([^\]]+)\]", content, re.IGNORECASE)
         if url_match:
             url = url_match.group(1).strip()
 
-        auth_match = re.search(r"\[AUTHORITY:\s*([^\]]+)\]", content)
+        auth_match = re.search(r"\[AUTHORITY:\s*([^\]]+)\]", content, re.IGNORECASE)
         if auth_match:
             authority = auth_match.group(1).strip()
 
         # Clean content removing bracket headers
-        clean_body = re.sub(r"\[[A-Z_]+:\s*[^\]]+\]\n*", "", content).strip()
+        clean_body = re.sub(r"\[[A-Za-z_]+:\s*[^\]]+\]\n*", "", content, flags=re.IGNORECASE).strip()
 
         # Chunk by logical sections/paragraphs
         raw_paragraphs = [p.strip() for p in clean_body.split("\n\n") if len(p.strip()) > 30]
@@ -154,10 +154,12 @@ class HybridRetriever:
         norms[norms == 0] = 1.0
         self.chunk_vectors = matrix / norms
 
-    def retrieve(self, query: str, top_k: int = TOP_K_CHUNKS) -> Dict[str, Any]:
+    def retrieve(self, query: str, top_k: int = TOP_K_CHUNKS, threshold: float = None) -> Dict[str, Any]:
         """
         Retrieves top relevant legal chunks and evaluates similarity against the evidence threshold.
         """
+        effective_threshold = threshold if threshold is not None else self.threshold
+
         if not self.chunks or not query.strip():
             return {
                 "chunks": [],
@@ -199,7 +201,6 @@ class HybridRetriever:
 
         results = []
         unique_sources = {}
-        max_score = float(scores[top_indices[0]]) if len(top_indices) > 0 else 0.0
 
         for idx in top_indices:
             score = float(scores[idx])
@@ -217,7 +218,8 @@ class HybridRetriever:
                         "authority": chunk.authority,
                     }
 
-        is_sufficient = max_score >= self.threshold
+        max_score = results[0]["score"] if results else 0.0
+        is_sufficient = max_score >= effective_threshold
 
         # Format context string for LLM prompt
         context_parts = []
