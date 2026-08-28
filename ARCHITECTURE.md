@@ -1,4 +1,4 @@
-# 🏛️ NyayaSahayak — Comprehensive System Architecture & Engineering Blueprint
+# NyayaSahayak — Comprehensive System Architecture & Engineering Blueprint
 
 > **Target Audience**: AI Agents, Systems Architects, and Software Engineers working on, extending, or refactoring the **NyayaSahayak** codebase.  
 > **Repository Root**: `d:/Chat_Bot/`  
@@ -7,7 +7,7 @@
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 1. [Executive Summary & Core Philosophy](#1-executive-summary--core-philosophy)
 2. [Exhaustive Repository & File Map](#2-exhaustive-repository--file-map)
 3. [End-to-End System Architecture & Data Flow](#3-end-to-end-system-architecture--data-flow)
