@@ -574,12 +574,15 @@ if query_to_process:
             # nothing downstream (citations, fallback logic, etc.) breaks.
             st.markdown(response_text, unsafe_allow_html=True)
 
-            # Store in session state — no st.rerun() needed here.
-            # The response is already rendered live above in this same script
-            # execution.  Calling st.rerun() would trigger a full page reload
-            # which (a) snaps the viewport back to the bottom and (b) wastes
-            # a round-trip.  On the next user submission Streamlit naturally
-            # re-runs the script, replaying all messages from session state.
+            # Store in session state, then rerun. The scroll-suppression
+            # patch above (window.scrollTo / scrollIntoView / scrollTop
+            # interception) is what stops the unwanted snap-to-bottom now
+            # — not avoiding rerun — so it's safe to rerun here. Without
+            # this rerun, the "hide welcome message" check at the top of
+            # the script (based on len(messages) > 1) only re-evaluates on
+            # the *next* user message, leaving the welcome text visible
+            # alongside the first Q&A instead of disappearing right after it.
             st.session_state.messages.append(
                 {"role": "assistant", "content": response_text, "meta": meta_data}
             )
+            st.rerun()
