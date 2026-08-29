@@ -213,6 +213,15 @@ st.markdown(
     [data-testid="collapsedControl"] {
         display: none;
     }
+
+    /* Prevent header/content from clipping under the browser's top edge
+       when scrolled — Streamlit renames this container across versions,
+       so all likely levels are covered */
+    [data-testid="stAppViewContainer"] .main .block-container,
+    [data-testid="stMainBlockContainer"],
+    .block-container {
+        padding-top: 3rem !important;
+    }
     </style>
     """,
     unsafe_allow_html=True,
@@ -271,8 +280,14 @@ retriever = get_retriever()
 # Chat-only mode — quick question chips removed
 selected_prompt = None
 
-# Render Chat History
-for message in st.session_state.messages:
+# Render Chat History — once a real exchange has happened (more than
+# just the initial welcome message), the welcome/bullet list is hidden
+# so only the active conversation shows.
+messages_to_render = st.session_state.messages
+if len(messages_to_render) > 1:
+    messages_to_render = messages_to_render[1:]
+
+for message in messages_to_render:
     with st.chat_message(message["role"]):
         if message.get("meta"):
             meta = message["meta"]
