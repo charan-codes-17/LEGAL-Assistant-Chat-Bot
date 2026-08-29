@@ -276,19 +276,100 @@ st.markdown(
         display: none;
     }
 
-    /* Prevent header/content from clipping under the browser's top edge
-       when scrolled — Streamlit renames this container across versions,
-       so all likely levels are covered */
-    [data-testid="stAppViewContainer"] .main .block-container,
-    [data-testid="stMainBlockContainer"],
-    .block-container {
-        padding-top: 3rem !important;
-        /* Generous bottom padding so the last chat bubble scrolls clear
-           of the fixed gradient overlay (input bar ≈ 80px + gradient
-           fade zone ≈ 80px + disclaimer ≈ 30px → 190px total) */
-        padding-bottom: 1rem !important;
+    /* Prevent the focused textarea from pulling the page down on mobile
+       or when Streamlit auto-focuses it after a rerun */
+    div[data-testid="stChatInput"] textarea {
+        overscroll-behavior: contain;
     }
     </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+# ── Suppress Streamlit's auto-scroll-to-bottom ────────────────────────────
+# Streamlit's front-end JS calls window.scrollTo({top: <large>, …}) and
+# element.scrollIntoView() after every DOM update to snap the viewport to
+# the newest message.  The snippet below intercepts both entry points and
+# turns them into no-ops ONLY for downward jumps triggered by Streamlit
+# itself — user-initiated scrolls (mouse wheel, touch, scrollbar drag) are
+# never affected because those don't go through these JS APIs.
+st.markdown(
+    """
+    <script>
+    (function () {
+        if (window.__lumaScrollPatched) return;
+        window.__lumaScrollPatched = true;
+
+        /* 1. Intercept window.scrollTo so Streamlit can't snap the whole
+              page downward.  Upward scrolls and scrolls to the very top
+              (top === 0) are still allowed so the page isn't completely
+              frozen. */
+        const _origScrollTo = window.scrollTo.bind(window);
+        window.scrollTo = function (xOrOpts, y) {
+            if (typeof xOrOpts === 'object' && xOrOpts !== null) {
+                const t = xOrOpts.top;
+                // Block any large downward snap (> 200 px from current pos)
+                if (typeof t === 'number' && t > window.scrollY + 200) return;
+                return _origScrollTo(xOrOpts);
+            }
+            if (typeof y === 'number' && y > window.scrollY + 200) return;
+            return _origScrollTo(xOrOpts, y);
+        };
+
+        /* 2. Intercept Element.prototype.scrollIntoView — Streamlit calls
+              this on chat message elements to pull them into view.  We
+              block it only for elements that live inside the main chat
+              scroll area; any other callers (e.g. anchor links) still work. */
+        const _origSIV = Element.prototype.scrollIntoView;
+        Element.prototype.scrollIntoView = function (arg) {
+            const inChat = this.closest(
+                '[data-testid="stChatMessageContainer"], '
+                + '[data-testid="stBottom"], '
+                + '.stChatMessage'
+            );
+            if (inChat) return;   // suppress auto-scroll for chat elements
+            return _origSIV.call(this, arg);
+        };
+
+        /* 3. Intercept scrollTop assignment on the main scrollable element
+              so nothing can jump the page by setting elem.scrollTop. */
+        const patchScrollTop = (el) => {
+            if (!el || el.__lumaPatched) return;
+            el.__lumaPatched = true;
+            let _st = el.scrollTop;
+            Object.defineProperty(el, 'scrollTop', {
+                get: () => _st,
+                set: (v) => {
+                    if (v > _st + 200) return;   // block downward snap
+                    _st = v;
+                    /* Use the real setter via a temporary clone trick */
+                    const proto = Object.getPrototypeOf(el);
+                    const desc = Object.getOwnPropertyDescriptor(proto, 'scrollTop');
+                    if (desc && desc.set) desc.set.call(el, v);
+                },
+                configurable: true,
+            });
+        };
+
+        /* Apply the scrollTop patch to the viewport and any inner scroll
+           container Streamlit might use, once the DOM is ready. */
+        const tryPatch = () => {
+            patchScrollTop(document.documentElement);
+            patchScrollTop(document.body);
+            const main = document.querySelector(
+                '[data-testid="stAppViewContainer"] > section.main, '
+                + '.main.st-emotion-cache-uf99v8'
+            );
+            if (main) patchScrollTop(main);
+        };
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', tryPatch);
+        } else {
+            tryPatch();
+        }
+    })();
+    </script>
     """,
     unsafe_allow_html=True,
 )
@@ -471,8 +552,12 @@ if query_to_process:
             # nothing downstream (citations, fallback logic, etc.) breaks.
             st.markdown(response_text)
 
-            # Store in session state
+            # Store in session state — no st.rerun() needed here.
+            # The response is already rendered live above in this same script
+            # execution.  Calling st.rerun() would trigger a full page reload
+            # which (a) snaps the viewport back to the bottom and (b) wastes
+            # a round-trip.  On the next user submission Streamlit naturally
+            # re-runs the script, replaying all messages from session state.
             st.session_state.messages.append(
                 {"role": "assistant", "content": response_text, "meta": meta_data}
             )
-            st.rerun()
