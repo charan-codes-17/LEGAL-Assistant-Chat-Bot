@@ -51,7 +51,14 @@ def format_response_with_citations(
     include_disclaimer: bool = True
 ) -> str:
     """
-    Appends structured citation metadata and the standard legal disclaimer to the generated response.
+    Appends structured citation metadata to the generated response.
+
+    NOTE: The standard legal disclaimer is intentionally no longer appended
+    per-message here. It is now shown once as a static st.caption() fixed
+    beneath the chat input in app.py, instead of repeating on every
+    assistant reply. `include_disclaimer` is kept in the signature so the
+    existing call sites in llm.py (which still pass include_disclaimer=True)
+    don't need to change — the argument is now a no-op.
     """
     parts = [answer.strip()]
 
@@ -63,8 +70,5 @@ def format_response_with_citations(
                 f"   - *Authority*: {src.get('authority', 'Government of India')}\n"
                 f"   - *Official Reference*: [{src.get('url', 'Official Document')}]({src.get('url', '#')})"
             )
-
-    if include_disclaimer:
-        parts.append(f"\n\n---\n{STANDARD_LEGAL_DISCLAIMER}")
 
     return "\n".join(parts)

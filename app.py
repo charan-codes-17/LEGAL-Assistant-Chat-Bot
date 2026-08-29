@@ -144,22 +144,63 @@ st.markdown(
         box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
     }
 
-    /* Strip the dark outer container behind the chat input bar —
-       keep only the inner textarea styling above. Streamlit renames
-       this wrapper across versions, so every likely level is covered. */
-    [data-testid="stBottom"],
+    /* ── Fixed bottom gradient wrapper ───────────────────────────────
+       Streamlit's [data-testid="stBottom"] is already position:fixed at
+       the bottom of the viewport.  We strip its opaque background and
+       replace it with a top-to-bottom linear gradient that fades from
+       fully transparent (top edge, where chat messages scroll behind it)
+       to solid dark (bottom edge, behind the input field + disclaimer).
+       This gives the exact "content fades under the bar" effect seen in
+       Gemini / ChatGPT without any extra DOM wrappers. */
+
+    /* 1. Strip inner containers so no solid box sits behind the gradient */
     [data-testid="stBottom"] > div,
-    [data-testid="stBottomBlockContainer"],
     [data-testid="stBottomBlockContainer"] > div,
     [data-testid="stChatInputContainer"],
-    .stChatFloatingInputContainer,
-    .stChatFloatingInputContainer > div,
-    [data-testid="stBottom"] .block-container {
+    .stChatFloatingInputContainer > div {
         background: transparent !important;
         background-color: transparent !important;
         border: none !important;
         box-shadow: none !important;
         backdrop-filter: none !important;
+    }
+
+    /* 2. Apply the gradient to stBottom itself.  The gradient starts
+       transparent at the top so chat bubbles show through as they scroll
+       up, and ends fully opaque at the same dark colour as the app bg.
+       `bottom: 0px` pins the whole dock flush to the viewport edge
+       (Streamlit's default leaves a small gap); padding-bottom is kept
+       small since it no longer needs to reserve a large empty strip. */
+    [data-testid="stBottom"],
+    [data-testid="stBottomBlockContainer"],
+    .stChatFloatingInputContainer {
+        bottom: 13px !important;
+        background: linear-gradient(
+            to bottom,
+            transparent 0%,
+            rgba(5, 5, 5, 0.55) 35%,
+            rgba(5, 5, 5, 0.92) 65%,
+            #050505 100%
+        ) !important;
+        border: none !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        /* Small bottom room for the disclaimer text */
+        padding-bottom: 0.7rem !important;
+    }
+
+    /* 3. Disclaimer sits directly under the input, on top of the solid
+       part of the gradient (bottom ~20 % of the container). */
+    .luma-input-caption {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0.55rem;
+        text-align: center;
+        font-size: 0.75rem;
+        color: #8a8a8a;
+        z-index: 1000;
+        pointer-events: none;
     }
 
     /* Loading animation — adapted from Uiverse.io by ClawHack1 */
@@ -242,6 +283,10 @@ st.markdown(
     [data-testid="stMainBlockContainer"],
     .block-container {
         padding-top: 3rem !important;
+        /* Generous bottom padding so the last chat bubble scrolls clear
+           of the fixed gradient overlay (input bar ≈ 80px + gradient
+           fade zone ≈ 80px + disclaimer ≈ 30px → 190px total) */
+        padding-bottom: 1rem !important;
     }
     </style>
     """,
@@ -310,36 +355,20 @@ if len(messages_to_render) > 1:
 
 for message in messages_to_render:
     with st.chat_message(message["role"]):
-        if message.get("meta"):
-            meta = message["meta"]
-            badges_html = "<div style='margin-bottom: 10px;'>"
-
-            # Category badge
-            cat = meta.get("category", "")
-            if cat == "LEGAL_IN_SCOPE":
-                badges_html += f"<span class='pipeline-badge badge-in-scope'>✓ Domain: LEGAL ({meta.get('classifier_conf', 1.0)})</span>"
-            elif cat == "LEGAL_UNVERIFIED":
-                badges_html += f"<span class='pipeline-badge badge-unverified'>? Domain: UNVERIFIED, checking evidence ({meta.get('classifier_conf', 1.0)})</span>"
-            elif cat == "OUT_OF_DOMAIN":
-                badges_html += "<span class='pipeline-badge badge-out-domain'>✗ Domain: OUT OF SCOPE</span>"
-            else:
-                badges_html += f"<span class='pipeline-badge badge-out-domain'>! Status: {cat}</span>"
-
-            # Score badge
-            if "score" in meta:
-                badges_html += f"<span class='pipeline-badge badge-score'>📊 Max Cosine Sim: {meta['score']}</span>"
-
-            # Provider badge
-            if "provider" in meta:
-                badges_html += f"<span class='pipeline-badge badge-offline'>⚡ {meta['provider']} ({meta.get('latency', 0.0)}s)</span>"
-
-            badges_html += "</div>"
-            st.markdown(badges_html, unsafe_allow_html=True)
-
+        # Pipeline debug badges (domain / cosine similarity / provider &
+        # latency) are intentionally not rendered — internal diagnostics,
+        # not something an end user should see. `message["meta"]` is still
+        # stored in session state untouched, so nothing downstream breaks.
         st.markdown(message["content"])
 
 # Handle Chat Input
 user_input = st.chat_input("Ask LUMA")
+st.markdown(
+    '<div class="luma-input-caption">LUMA is an AI assistant providing general '
+    'information, not formal legal advice. Verify critical details with a '
+    'qualified advocate.</div>',
+    unsafe_allow_html=True,
+)
 query_to_process = selected_prompt or user_input
 
 if query_to_process:
@@ -436,25 +465,10 @@ if query_to_process:
             # Clear the loading animation now that we have a result
             loader_placeholder.empty()
 
-            # Display response with badges
-            badges_html = "<div style='margin-bottom: 10px;'>"
-            if category == "LEGAL_IN_SCOPE":
-                badges_html += f"<span class='pipeline-badge badge-in-scope'>✓ Domain: LEGAL ({domain_result['confidence']})</span>"
-            elif category == "LEGAL_UNVERIFIED":
-                badges_html += f"<span class='pipeline-badge badge-unverified'>? Domain: UNVERIFIED, checking evidence ({domain_result['confidence']})</span>"
-            elif category == "OUT_OF_DOMAIN":
-                badges_html += "<span class='pipeline-badge badge-out-domain'>✗ Domain: OUT OF SCOPE</span>"
-            else:
-                badges_html += f"<span class='pipeline-badge badge-out-domain'>! Status: {category}</span>"
-
-            if "score" in meta_data:
-                badges_html += f"<span class='pipeline-badge badge-score'>📊 Max Cosine Sim: {meta_data['score']}</span>"
-
-            if "provider" in meta_data:
-                badges_html += f"<span class='pipeline-badge badge-offline'>⚡ {meta_data['provider']} ({meta_data.get('latency', 0.0)}s)</span>"
-
-            badges_html += "</div>"
-            st.markdown(badges_html, unsafe_allow_html=True)
+            # Pipeline debug badges (domain / cosine similarity / provider &
+            # latency) are intentionally not rendered here either — meta_data
+            # is still computed above and stored in session state below, so
+            # nothing downstream (citations, fallback logic, etc.) breaks.
             st.markdown(response_text)
 
             # Store in session state
