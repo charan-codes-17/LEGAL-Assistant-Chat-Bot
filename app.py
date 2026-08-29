@@ -8,7 +8,7 @@ import json
 from pathlib import Path
 
 from src.config import (
-    GEMINI_API_KEY,
+    GROQ_API_KEY,
     OPENROUTER_API_KEY,
     DEFAULT_MODEL,
     OPENROUTER_MODEL,
@@ -186,14 +186,14 @@ with st.sidebar:
 
     provider_choice = st.selectbox(
         "Active AI Provider",
-        ["OpenRouter API", "Google Gemini API", "⚡ Offline Demo Mode"],
+        ["OpenRouter API", "Groq API", "⚡ Offline Demo Mode"],
         index=0 if OPENROUTER_API_KEY else 2,
         help="Select live generation provider or 100% deterministic offline demo mode."
     )
 
     openrouter_key_input = ""
     openrouter_model_input = OPENROUTER_MODEL
-    gemini_key_input = ""
+    groq_key_input = ""
 
     if provider_choice == "OpenRouter API":
         openrouter_key_input = st.text_input(
@@ -213,13 +213,13 @@ with st.sidebar:
             ],
             index=0,
         )
-    elif provider_choice == "Google Gemini API":
-        gemini_key_input = st.text_input(
-            "Gemini API Key",
-            value=GEMINI_API_KEY,
+    elif provider_choice == "Groq API":
+        groq_key_input = st.text_input(
+            "Groq API Key",
+            value=GROQ_API_KEY,
             type="password",
-            placeholder="AIzaSy...",
-            help="Your Google Gemini API key.",
+            placeholder="gsk_...",
+            help="Your Groq API key.",
         )
 
     demo_mode = (provider_choice == "⚡ Offline Demo Mode")
@@ -391,16 +391,16 @@ if query_to_process:
                 )
                 meta_data["score"] = retrieval["max_score"]
 
-                pref_provider = "offline" if demo_mode else ("openrouter" if provider_choice == "OpenRouter API" else "gemini")
+                pref_provider = "offline" if demo_mode else ("openrouter" if provider_choice == "OpenRouter API" else "groq")
                 llm_client = LLMClient(
-                    api_key=gemini_key_input,
+                    groq_key=groq_key_input,
                     openrouter_key=openrouter_key_input,
                     openrouter_model=openrouter_model_input,
                 )
                 gen_result = llm_client.generate_answer(
                     query=query_to_process,
                     retrieval_data=retrieval,
-                    custom_gemini_key=gemini_key_input,
+                    custom_groq_key=groq_key_input,
                     custom_openrouter_key=openrouter_key_input,
                     force_offline=demo_mode,
                     preferred_provider=pref_provider,
