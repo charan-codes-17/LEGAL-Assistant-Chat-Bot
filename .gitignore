@@ -9,7 +9,7 @@ __pycache__/
 .pytest_cache/
 
 # Streamlit
-.streamlit/
+.streamlit/secrets.toml
 
 # Vector store cache
 vector_store/*.npy
@@ -18,3 +18,7 @@ vector_store/*.pkl
 # OS files
 .DS_Store
 Thumbs.db
+
+# Antigravity agent state & logs
+.antigravity/
+.agent/
