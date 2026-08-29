@@ -10,7 +10,6 @@ from pathlib import Path
 from src.config import (
     GROQ_API_KEY,
     OPENROUTER_API_KEY,
-    DEFAULT_MODEL,
     OPENROUTER_MODEL,
     EVIDENCE_THRESHOLD,
     TOP_K_CHUNKS,
