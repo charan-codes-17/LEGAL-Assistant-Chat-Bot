@@ -1,6 +1,5 @@
-# ⚖️ LUMA — Indian Legal Information Assistant
+# ⚖️ LUMA — Legal Understanding with Modern Assistant
 > **BUILD-A-BOT Competition Entry**  
-> **Organized by**: Data Intelligence Club, Department of Artificial Intelligence, Thiagarajar College of Engineering  
 > **Theme**: Legal Assistant  
 > **Target Problem**: Empowering citizens with factual, grounded legal information on Indian Constitutional Rights and Arrest/Detention Safeguards without hallucinations.
 

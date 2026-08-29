@@ -253,57 +253,61 @@ with st.sidebar:
         help="Select live generation provider or 100% deterministic offline demo mode."
     )
 
-    openrouter_key_input = ""
-    openrouter_model_input = OPENROUTER_MODEL
-    groq_key_input = ""
-
-    if provider_choice == "OpenRouter API":
-        openrouter_key_input = st.text_input(
-            "OpenRouter API Key",
-            value=OPENROUTER_API_KEY,
-            type="password",
-            placeholder="sk-or-v1-...",
-            help="Your OpenRouter API key.",
-        )
-        openrouter_model_input = st.selectbox(
-            "Model",
-            [
-                "meta-llama/llama-3.3-70b-instruct",
-                "openai/gpt-4o-mini",
-                "deepseek/deepseek-chat",
-                "anthropic/claude-3-haiku",
-            ],
-            index=0,
-        )
-    elif provider_choice == "Groq API":
-        groq_key_input = st.text_input(
-            "Groq API Key",
-            value=GROQ_API_KEY,
-            type="password",
-            placeholder="gsk_...",
-            help="Your Groq API key.",
-        )
-
     demo_mode = (provider_choice == "⚡ Offline Demo Mode")
 
-    threshold_slider = st.slider(
-        "Evidence Threshold",
-        min_value=0.05,
-        max_value=0.50,
-        value=EVIDENCE_THRESHOLD,
-        step=0.01,
-        help="Cosine similarity threshold required to generate an answer and prevent hallucination.",
-    )
+    # Defaults used when the advanced panel below hasn't been opened /
+    # a field doesn't apply to the currently selected provider.
+    openrouter_key_input = OPENROUTER_API_KEY
+    openrouter_model_input = OPENROUTER_MODEL
+    groq_key_input = GROQ_API_KEY
+    threshold_slider = EVIDENCE_THRESHOLD
 
-    st.markdown("---")
-    st.markdown("### 📚 Knowledge Base Sources")
     retriever = get_retriever()
 
-    with st.expander(f"Inspect Sources ({len(retriever.sources_catalog)})", expanded=False):
-        for sid, src in retriever.sources_catalog.items():
-            st.markdown(f"**{src['title']}**")
-            st.caption(f"Authority: {src['authority']} | [Link]({src['url']})")
-            st.divider()
+    st.markdown("---")
+    with st.expander("🛠️ Advanced / Developer Settings", expanded=False):
+        if provider_choice == "OpenRouter API":
+            openrouter_key_input = st.text_input(
+                "OpenRouter API Key",
+                value=OPENROUTER_API_KEY,
+                type="password",
+                placeholder="sk-or-v1-...",
+                help="Your OpenRouter API key.",
+            )
+            openrouter_model_input = st.selectbox(
+                "Model",
+                [
+                    "meta-llama/llama-3.3-70b-instruct",
+                    "openai/gpt-4o-mini",
+                    "deepseek/deepseek-chat",
+                    "anthropic/claude-3-haiku",
+                ],
+                index=0,
+            )
+        elif provider_choice == "Groq API":
+            groq_key_input = st.text_input(
+                "Groq API Key",
+                value=GROQ_API_KEY,
+                type="password",
+                placeholder="gsk_...",
+                help="Your Groq API key.",
+            )
+
+        threshold_slider = st.slider(
+            "Evidence Threshold",
+            min_value=0.05,
+            max_value=0.50,
+            value=EVIDENCE_THRESHOLD,
+            step=0.01,
+            help="Cosine similarity threshold required to generate an answer and prevent hallucination.",
+        )
+
+        st.markdown("##### 📚 Knowledge Base Sources")
+        with st.expander(f"Inspect Sources ({len(retriever.sources_catalog)})", expanded=False):
+            for sid, src in retriever.sources_catalog.items():
+                st.markdown(f"**{src['title']}**")
+                st.caption(f"Authority: {src['authority']} | [Link]({src['url']})")
+                st.divider()
 
     st.markdown("---")
     if st.button("🗑️ Clear Conversation", use_container_width=True):
