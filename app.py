@@ -203,6 +203,28 @@ st.markdown(
         pointer-events: none;
     }
 
+    /* ── Sources accordion (rendered via format_response_with_citations) ──
+       The <details> element is collapsed by default. We animate the inner
+       content div with a max-height transition so it expands smoothly.
+       The native browser triangle/arrow marker is hidden on all engines. */
+    details > summary {
+        list-style: none !important;   /* Firefox */
+    }
+    details > summary::-webkit-details-marker {
+        display: none !important;       /* Chrome/Safari */
+    }
+    details > div {
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                    opacity   0.25s ease;
+    }
+    details[open] > div {
+        max-height: 600px;   /* generous ceiling; actual height is shorter */
+        opacity: 1;
+    }
+
     /* Loading animation — adapted from Uiverse.io by ClawHack1 */
     .luma-loader-wrap {
         display: flex;
@@ -440,7 +462,7 @@ for message in messages_to_render:
         # latency) are intentionally not rendered — internal diagnostics,
         # not something an end user should see. `message["meta"]` is still
         # stored in session state untouched, so nothing downstream breaks.
-        st.markdown(message["content"])
+        st.markdown(message["content"], unsafe_allow_html=True)
 
 # Handle Chat Input
 user_input = st.chat_input("Ask LUMA")
@@ -550,7 +572,7 @@ if query_to_process:
             # latency) are intentionally not rendered here either — meta_data
             # is still computed above and stored in session state below, so
             # nothing downstream (citations, fallback logic, etc.) breaks.
-            st.markdown(response_text)
+            st.markdown(response_text, unsafe_allow_html=True)
 
             # Store in session state — no st.rerun() needed here.
             # The response is already rendered live above in this same script
