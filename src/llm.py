@@ -129,6 +129,10 @@ class LLMClient:
         custom_openrouter_key: Optional[str] = None,
         force_offline: bool = False,
         preferred_provider: str = "auto",  # 'groq', 'openrouter', 'offline', 'auto'
+        chat_history: str = "",  # pre-formatted prior turns for pronoun/context
+        # resolution (e.g. "User: ...\nLUMA: ..."). Defaults to "" so any
+        # existing caller that doesn't pass it still works — GROUNDED_QA_TEMPLATE
+        # always receives a value for {chat_history}, never a missing kwarg.
     ) -> Dict[str, Any]:
         """
         Orchestrates grounded answer generation with multi-tiered fallback.
@@ -210,7 +214,10 @@ class LLMClient:
             }
 
         # 3. Live LLM Generation
-        prompt = GROUNDED_QA_TEMPLATE.format(context=formatted_context, query=query)
+        history_text = chat_history.strip() if chat_history else "(No prior conversation — this is the first message.)"
+        prompt = GROUNDED_QA_TEMPLATE.format(
+            context=formatted_context, chat_history=history_text, query=query
+        )
         last_error = None
 
         # Explicit user choice: "Groq API" in the sidebar.
