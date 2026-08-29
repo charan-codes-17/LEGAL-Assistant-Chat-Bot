@@ -414,11 +414,15 @@ if "messages" not in st.session_state:
         {
             "role": "assistant",
             "content": (
-                "Hi, I’m **LUMA** — a chatbot made for **L**egal **U**nderstanding with **M**odern **A**ssistance \n \n"
-                "LUMA simplifies **Indian constitutional rights** and **arrest & detention safeguards**.  \n"
-                "Whether you need clarity on your rights, court guidelines, legal remedies, or free legal aid, **LUMA** translates complex statutes into plain, accessible answers.\n \n"
-                "Every response is grounded in **reliable official legal sources**. \n"
-                "**If the evidence isn’t there, LUMA won’t make it up.**\n"
+                "Hi! I am **LUMA**, your verified AI assistant for **Indian Constitutional Rights "
+                "and Arrest/Detention Safeguards**.\n\n"
+                "You can ask me about:\n"
+                "- **Article 21** (Right to Life & Personal Liberty)\n"
+                "- **Article 22 & CrPC** (Grounds of arrest, mandatory 24-hr magistrate production)\n"
+                "- **D.K. Basu Guidelines** (Arrest memo, medical check, family intimation)\n"
+                "- **Article 39A & NALSA** (Free Legal Aid)\n"
+                "- **Articles 32 & 226** (Writ of *Habeas Corpus* for unlawful detention)\n\n"
+                "💡 *Click any of the challenge questions below or type your own question.*"
             ),
             "meta": None,
         }
@@ -444,6 +448,36 @@ retriever = get_retriever()
 
 # Chat-only mode — quick question chips removed
 selected_prompt = None
+
+
+def build_chat_history_text(messages: list, max_turns: int = 3) -> str:
+    """
+    Build a compact "User: ...\\nLUMA: ..." history string for the LLM
+    prompt's {chat_history} slot, so follow-up questions with pronouns
+    ("What if they refuse?") can be resolved against prior turns.
+
+    - Excludes index 0 (the welcome/greeting message) and the last item
+      (the current user question, which is passed separately as `query`
+      and hasn't been answered yet at the point this is built).
+    - Bounded to the last `max_turns` exchanges (user+assistant pairs) so
+      the prompt doesn't grow unbounded over a long conversation.
+    - Returns "" for the first message of a conversation; llm.py already
+      substitutes a readable placeholder in that case.
+    """
+    if len(messages) <= 2:
+        # Nothing but the welcome message and/or the current unanswered
+        # question — no real prior history to include yet.
+        return ""
+
+    history_source = messages[1:-1]
+    trimmed = history_source[-(max_turns * 2):]
+
+    lines = []
+    for m in trimmed:
+        role_label = "User" if m["role"] == "user" else "LUMA"
+        lines.append(f"{role_label}: {m['content']}")
+    return "\n".join(lines)
+
 
 # Render Chat History — once a real exchange has happened (more than
 # just the initial welcome message), the welcome/bullet list is hidden
@@ -548,6 +582,7 @@ if query_to_process:
                     openrouter_key=openrouter_key_input,
                     openrouter_model=openrouter_model_input,
                 )
+                chat_history_text = build_chat_history_text(st.session_state.messages)
                 gen_result = llm_client.generate_answer(
                     query=query_to_process,
                     retrieval_data=retrieval,
@@ -555,6 +590,7 @@ if query_to_process:
                     custom_openrouter_key=openrouter_key_input,
                     force_offline=demo_mode,
                     preferred_provider=pref_provider,
+                    chat_history=chat_history_text,
                 )
 
                 response_text = gen_result["answer"]
