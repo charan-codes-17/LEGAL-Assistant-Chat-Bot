@@ -209,6 +209,27 @@ st.markdown(
             box-shadow: 0 0 14px rgba(59, 130, 246, 0.5);
         }
     }
+    /* Hide Streamlit's default chrome: main menu, header toolbar, footer,
+       "Manage app" pill, and Fork/GitHub controls — this was previously
+       only suggested as a snippet and never actually landed in the file */
+    #MainMenu {visibility: hidden; height: 0;}
+    footer {visibility: hidden; height: 0;}
+    header {visibility: hidden; height: 0;}
+
+    [data-testid="stToolbar"],
+    [data-testid="stStatusWidget"],
+    [data-testid="stHeader"],
+    [data-testid="stDecoration"] {
+        visibility: hidden !important;
+        height: 0 !important;
+        position: fixed !important;
+    }
+
+    .stAppDeployButton,
+    .stDeployButton {
+        display: none !important;
+    }
+
     /* No sidebar content remains — hide the empty toggle arrow entirely */
     [data-testid="collapsedControl"] {
         display: none;
