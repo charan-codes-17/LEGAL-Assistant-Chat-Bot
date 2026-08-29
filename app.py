@@ -30,7 +30,7 @@ st.set_page_config(
     page_title="LUMA — Legal Understanding with Modern Assistant",
     page_icon="⚖️",
     layout="wide",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state="collapsed",
 )
 
 # Custom CSS — Clean flat-black SaaS style (grid background, no blur/glass, bold type)
@@ -144,6 +144,24 @@ st.markdown(
         box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
     }
 
+    /* Strip the dark outer container behind the chat input bar —
+       keep only the inner textarea styling above. Streamlit renames
+       this wrapper across versions, so every likely level is covered. */
+    [data-testid="stBottom"],
+    [data-testid="stBottom"] > div,
+    [data-testid="stBottomBlockContainer"],
+    [data-testid="stBottomBlockContainer"] > div,
+    [data-testid="stChatInputContainer"],
+    .stChatFloatingInputContainer,
+    .stChatFloatingInputContainer > div,
+    [data-testid="stBottom"] .block-container {
+        background: transparent !important;
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+    }
+
     /* Loading animation — adapted from Uiverse.io by ClawHack1 */
     .luma-loader-wrap {
         display: flex;
@@ -191,6 +209,10 @@ st.markdown(
             box-shadow: 0 0 14px rgba(59, 130, 246, 0.5);
         }
     }
+    /* No sidebar content remains — hide the empty toggle arrow entirely */
+    [data-testid="collapsedControl"] {
+        display: none;
+    }
     </style>
     """,
     unsafe_allow_html=True,
@@ -199,11 +221,10 @@ st.markdown(
 # Header
 st.markdown(
     """
-    <div class="header-box">
-        <div class="header-title">⚖️ LUMA — Legal Information Assistant</div>
-        <div class="header-sub">
-            Grounded Indian Constitutional & Arrest Rights Assistant • Built for <b>BUILD-A-BOT</b> Competition (Dept of AI, TCE)
-        </div>
+    <div style="text-align: center; margin-bottom: 20px;">
+        <span style="font-size: 2.1rem; font-weight: 700; color: #ffffff;">
+            ⚖️ LUMA — Your Legal Assistant
+        </span>
     </div>
     """,
     unsafe_allow_html=True,
@@ -229,142 +250,26 @@ if "messages" not in st.session_state:
         }
     ]
 
-# Sidebar
-with st.sidebar:
-    st.image("https://img.icons8.com/fluency/96/scales.png", width=64)
-    st.title("⚙️ Control Panel")
+# Engine config — no sidebar UI. Provider auto-selects from configured
+# Secrets/.env in priority order: OpenRouter -> Groq -> Offline Demo Mode.
+if OPENROUTER_API_KEY:
+    provider_choice = "OpenRouter API"
+elif GROQ_API_KEY:
+    provider_choice = "Groq API"
+else:
+    provider_choice = "⚡ Offline Demo Mode"
 
-    st.markdown("### 🔒 System Scope")
-    st.info(
-        "**Verified Legal Domain:**\n"
-        "• Constitution of India (Arts 14, 19, 21, 22, 32, 226)\n"
-        "• CrPC / BNSS (Arrest rights, Sec 41, 50, 57, 167)\n"
-        "• D.K. Basu Landmark Guidelines\n"
-        "• Legal Services Authorities Act (NALSA)"
-    )
+demo_mode = (provider_choice == "⚡ Offline Demo Mode")
+openrouter_key_input = OPENROUTER_API_KEY
+openrouter_model_input = OPENROUTER_MODEL
+groq_key_input = GROQ_API_KEY
+threshold_slider = EVIDENCE_THRESHOLD
 
-    st.markdown("---")
-    st.markdown("### 🔌 Engine Settings")
-
-    provider_choice = st.selectbox(
-        "Active AI Provider",
-        ["OpenRouter API", "Groq API", "⚡ Offline Demo Mode"],
-        index=0 if OPENROUTER_API_KEY else 2,
-        help="Select live generation provider or 100% deterministic offline demo mode."
-    )
-
-    demo_mode = (provider_choice == "⚡ Offline Demo Mode")
-
-    # Defaults used when the advanced panel below hasn't been opened /
-    # a field doesn't apply to the currently selected provider.
-    openrouter_key_input = OPENROUTER_API_KEY
-    openrouter_model_input = OPENROUTER_MODEL
-    groq_key_input = GROQ_API_KEY
-    threshold_slider = EVIDENCE_THRESHOLD
-
-    retriever = get_retriever()
-
-    st.markdown("---")
-    with st.expander("🛠️ Advanced / Developer Settings", expanded=False):
-        if provider_choice == "OpenRouter API":
-            openrouter_key_input = st.text_input(
-                "OpenRouter API Key",
-                value=OPENROUTER_API_KEY,
-                type="password",
-                placeholder="sk-or-v1-...",
-                help="Your OpenRouter API key.",
-            )
-            openrouter_model_input = st.selectbox(
-                "Model",
-                [
-                    "meta-llama/llama-3.3-70b-instruct",
-                    "openai/gpt-4o-mini",
-                    "deepseek/deepseek-chat",
-                    "anthropic/claude-3-haiku",
-                ],
-                index=0,
-            )
-        elif provider_choice == "Groq API":
-            groq_key_input = st.text_input(
-                "Groq API Key",
-                value=GROQ_API_KEY,
-                type="password",
-                placeholder="gsk_...",
-                help="Your Groq API key.",
-            )
-
-        threshold_slider = st.slider(
-            "Evidence Threshold",
-            min_value=0.05,
-            max_value=0.50,
-            value=EVIDENCE_THRESHOLD,
-            step=0.01,
-            help="Cosine similarity threshold required to generate an answer and prevent hallucination.",
-        )
-
-        st.markdown("##### 📚 Knowledge Base Sources")
-        with st.expander(f"Inspect Sources ({len(retriever.sources_catalog)})", expanded=False):
-            for sid, src in retriever.sources_catalog.items():
-                st.markdown(f"**{src['title']}**")
-                st.caption(f"Authority: {src['authority']} | [Link]({src['url']})")
-                st.divider()
-
-    st.markdown("---")
-    if st.button("🗑️ Clear Conversation", use_container_width=True):
-        st.session_state.messages = [st.session_state.messages[0]]
-        st.rerun()
-
-    # Chat Export
-    chat_export_text = "# LUMA Legal Chatbot — Session Transcript\n\n"
-    for msg in st.session_state.messages:
-        chat_export_text += f"### {msg['role'].upper()}:\n{msg['content']}\n\n"
-    st.download_button(
-        "📥 Download Chat Transcript",
-        data=chat_export_text,
-        file_name="legal_assistant_session.md",
-        mime="text/markdown",
-        use_container_width=True,
-    )
+retriever = get_retriever()
 
 
-# 5 Challenge Questions Quick Selection Chips
-st.markdown("##### 🎯 Competition Challenge Questions (One-Click Demo):")
-col1, col2, col3 = st.columns(3)
-col4, col5 = st.columns(2)
-
+# Chat-only mode — quick question chips removed
 selected_prompt = None
-
-with col1:
-    if st.button("Q1: Article 21 Right to Life", use_container_width=True):
-        selected_prompt = (
-            "Is it true that Article 21 of the Constitution of India guarantees the right to life "
-            "and personal liberty? Verify your answer using reliable legal sources."
-        )
-
-with col2:
-    if st.button("Q2: Police Arrest Without Reason?", use_container_width=True):
-        selected_prompt = (
-            "Under Indian law, police can arrest any person without reason or evidence at any time. Is this correct?"
-        )
-
-with col3:
-    if st.button("Q3: Rights at Time of Arrest", use_container_width=True):
-        selected_prompt = (
-            "If arrest requires legal grounds, what rights does a person have at the time of arrest in India?"
-        )
-
-with col4:
-    if st.button("Q4: Detained > 24h Without Magistrate Advice", use_container_width=True):
-        selected_prompt = (
-            "Suppose a person is arrested without being informed of the reason and not produced before "
-            "a magistrate within 24 hours. What would you advise?"
-        )
-
-with col5:
-    if st.button("Q5: Decision Trees in ML (Out of Domain)", use_container_width=True):
-        selected_prompt = (
-            "What are the main principles behind machine learning algorithms like decision trees?"
-        )
 
 # Render Chat History
 for message in st.session_state.messages:
@@ -398,7 +303,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # Handle Chat Input
-user_input = st.chat_input("Ask LUMA — e.g. What are my rights if I'm arrested?")
+user_input = st.chat_input("Ask LUMA")
 query_to_process = selected_prompt or user_input
 
 if query_to_process:
