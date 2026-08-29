@@ -46,18 +46,22 @@ class LLMClient:
         self.openrouter_model = openrouter_model
 
     def _call_gemini(self, prompt: str, system_prompt: str, api_key: str) -> str:
-        import google.generativeai as genai
+        from google import genai
+        from google.genai import types
 
-        genai.configure(api_key=api_key)
-        model = genai.GenerativeModel(
-            model_name=self.model_name,
-            system_instruction=system_prompt,
-            generation_config=genai.types.GenerationConfig(
+        client = genai.Client(api_key=api_key)
+        response = client.models.generate_content(
+            model=self.model_name,
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                system_instruction=system_prompt,
                 temperature=TEMPERATURE,
                 max_output_tokens=MAX_OUTPUT_TOKENS,
+                # Grounded QA over retrieved chunks doesn't need deep reasoning;
+                # minimal thinking keeps latency/cost down on flash-lite.
+                thinking_level="minimal",
             ),
         )
-        response = model.generate_content(prompt)
         if response and response.text:
             return response.text.strip()
         raise ValueError("Empty response received from Gemini API.")
@@ -202,6 +206,27 @@ class LLMClient:
         prompt = GROUNDED_QA_TEMPLATE.format(context=formatted_context, query=query)
         last_error = None
 
+        # Explicit user choice: "Google Gemini API" in the sidebar. This was
+        # previously a no-op — preferred_provider="gemini" was accepted as a
+        # parameter but never actually consulted, so the OpenRouter heuristic
+        # below always won if an OpenRouter key was also present.
+        if preferred_provider == "gemini" and gemini_key:
+            try:
+                raw_answer = self._call_gemini(prompt, LEGAL_SYSTEM_PROMPT, gemini_key)
+                formatted = format_response_with_citations(raw_answer, sources, include_disclaimer=True)
+                latency = round(time.time() - start_time, 3)
+                return {
+                    "answer": formatted,
+                    "sources": sources,
+                    "provider": f"Live LLM (Gemini: {self.model_name})",
+                    "latency": latency,
+                    "is_cached": False,
+                    "status": "SUCCESS",
+                }
+            except Exception as e:
+                last_error = f"Gemini Error: {e}"
+                logger.warning(last_error)
+
         # Prioritize OpenRouter if openrouter_key is provided and preferred or Gemini key is absent
         if preferred_provider == "openrouter" or (openrouter_key and not gemini_key.startswith("AIza")):
             try:
@@ -220,8 +245,9 @@ class LLMClient:
                 last_error = f"OpenRouter Error: {e}"
                 logger.warning(last_error)
 
-        # Try Gemini API if key is available
-        if gemini_key:
+        # Try Gemini API if key is available (skip if the explicit gemini-first
+        # branch above already tried and failed — no point calling it twice)
+        if gemini_key and preferred_provider != "gemini":
             try:
                 raw_answer = self._call_gemini(prompt, LEGAL_SYSTEM_PROMPT, gemini_key)
                 formatted = format_response_with_citations(raw_answer, sources, include_disclaimer=True)
