@@ -33,100 +33,163 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# Custom CSS for Premium Modern Glassmorphism & High-Contrast Typography
+# Custom CSS — Clean flat-black SaaS style (grid background, no blur/glass, bold type)
 st.markdown(
     """
     <style>
-    /* Dark glassmorphic styling */
+    /* Solid black app background with faint grid-line pattern */
     .stApp {
-        background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0d131f 100%);
-        color: #e6edf3;
+        background-color: #050505;
+        background-image:
+            linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+        background-size: 42px 42px;
+        color: #f5f5f5;
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
-    
-    /* Header Card */
+
+    /* Header Card — flat panel, hairline border, no blur */
     .header-box {
-        background: rgba(22, 27, 34, 0.75);
-        border: 1px solid rgba(56, 139, 253, 0.3);
-        border-radius: 12px;
-        padding: 20px 24px;
+        background: #0c0c0d;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+        padding: 22px 26px;
         margin-bottom: 20px;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     }
-    
+
     .header-title {
-        font-size: 2.2rem;
+        font-size: 2.1rem;
         font-weight: 700;
-        background: linear-gradient(90deg, #58a6ff, #79c0ff, #d2a8ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: #ffffff;
         margin-bottom: 6px;
     }
-    
+
     .header-sub {
-        color: #8b949e;
+        color: #8a8a8a;
         font-size: 0.95rem;
         margin-bottom: 0px;
     }
-    
-    /* Pipeline Badge Container */
+
+    /* Pipeline Badge Container — flat pill, no glow */
     .pipeline-badge {
         display: inline-flex;
         align-items: center;
         padding: 4px 10px;
-        border-radius: 20px;
-        font-size: 0.8rem;
+        border-radius: 6px;
+        font-size: 0.78rem;
         font-weight: 600;
         margin-right: 8px;
         margin-bottom: 8px;
+        background: #111214;
     }
-    
+
     .badge-in-scope {
-        background-color: rgba(35, 134, 54, 0.25);
-        color: #3fb950;
-        border: 1px solid rgba(63, 185, 80, 0.4);
+        color: #4ade80;
+        border: 1px solid rgba(74, 222, 128, 0.35);
     }
-    
+
     .badge-out-domain {
-        background-color: rgba(218, 54, 51, 0.25);
-        color: #f85149;
-        border: 1px solid rgba(248, 81, 73, 0.4);
+        color: #f87171;
+        border: 1px solid rgba(248, 113, 113, 0.35);
     }
-    
+
     .badge-score {
-        background-color: rgba(88, 166, 255, 0.2);
-        color: #58a6ff;
-        border: 1px solid rgba(88, 166, 255, 0.4);
+        color: #60a5fa;
+        border: 1px solid rgba(96, 165, 250, 0.35);
     }
-    
+
     .badge-unverified {
-        background-color: rgba(210, 153, 34, 0.2);
-        color: #d29922;
-        border: 1px solid rgba(210, 153, 34, 0.4);
+        color: #fbbf24;
+        border: 1px solid rgba(251, 191, 36, 0.35);
     }
-    
+
     .badge-offline {
-        background-color: rgba(210, 153, 34, 0.2);
-        color: #d29922;
-        border: 1px solid rgba(210, 153, 34, 0.4);
+        color: #fbbf24;
+        border: 1px solid rgba(251, 191, 36, 0.35);
     }
-    
-    /* Quick chip buttons */
+
+    /* Quick chip buttons — flat, hairline border, subtle hover lift */
     .stButton button {
+        background-color: #0c0c0d;
+        border: 1px solid rgba(255, 255, 255, 0.12);
         border-radius: 8px;
-        transition: all 0.2s ease-in-out;
+        color: #f5f5f5;
+        transition: all 0.15s ease-in-out;
     }
-    
+
     .stButton button:hover {
-        border-color: #58a6ff;
-        box-shadow: 0 0 12px rgba(88, 166, 255, 0.3);
+        border-color: #3b82f6;
+        background-color: #101114;
     }
-    
-    /* Sidebar enhancements */
+
+    /* Sidebar — solid black, hairline divider */
     [data-testid="stSidebar"] {
-        background-color: #0b0f14;
-        border-right: 1px solid #30363d;
+        background-color: #000000;
+        border-right: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Chat input — flat black field, blue focus ring */
+    div[data-testid="stChatInput"] textarea {
+        border: 1px solid rgba(255, 255, 255, 0.12) !important;
+        border-radius: 10px !important;
+        background: #0c0c0d !important;
+        color: #f5f5f5 !important;
+        padding: 1rem !important;
+        transition: border 150ms cubic-bezier(0.4,0,0.2,1), box-shadow 150ms cubic-bezier(0.4,0,0.2,1);
+    }
+
+    div[data-testid="stChatInput"] textarea:focus {
+        outline: none !important;
+        border: 1px solid #3b82f6 !important;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+
+    /* Loading animation — adapted from Uiverse.io by ClawHack1 */
+    .luma-loader-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 0;
+    }
+    .luma-loader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 40px;
+    }
+    .luma-loader-block {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        margin: 2px;
+        background-color: #3b82f6;
+        box-shadow: 0 0 14px #3b82f6;
+        animation: luma_loader_pulse 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    }
+    .luma-loader-block:nth-child(1) { animation-delay: 0.1s; }
+    .luma-loader-block:nth-child(2) { animation-delay: 0.2s; }
+    .luma-loader-block:nth-child(3) { animation-delay: 0.3s; }
+    .luma-loader-block:nth-child(4) { animation-delay: 0.4s; }
+    .luma-loader-block:nth-child(5) { animation-delay: 0.5s; }
+    .luma-loader-text {
+        color: #8a8a8a;
+        font-size: 0.85rem;
+    }
+    @keyframes luma_loader_pulse {
+        0% {
+            transform: scale(1);
+            box-shadow: 0 0 14px rgba(59, 130, 246, 0.5);
+        }
+        20% {
+            transform: scale(1, 2.5);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.7);
+        }
+        40% {
+            transform: scale(1);
+            box-shadow: 0 0 14px rgba(59, 130, 246, 0.5);
+        }
     }
     </style>
     """,
@@ -331,7 +394,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # Handle Chat Input
-user_input = st.chat_input("Ask a legal question regarding Indian Constitutional & Arrest Rights...")
+user_input = st.chat_input("Ask LUMA — e.g. What are my rights if I'm arrested?")
 query_to_process = selected_prompt or user_input
 
 if query_to_process:
@@ -342,7 +405,23 @@ if query_to_process:
 
     # Process query
     with st.chat_message("assistant"):
-        with st.spinner("Analyzing query, checking legal domain & retrieving verified sources..."):
+        loader_placeholder = st.empty()
+        loader_placeholder.markdown(
+            """
+            <div class="luma-loader-wrap">
+                <div class="luma-loader">
+                    <div class="luma-loader-block"></div>
+                    <div class="luma-loader-block"></div>
+                    <div class="luma-loader-block"></div>
+                    <div class="luma-loader-block"></div>
+                    <div class="luma-loader-block"></div>
+                </div>
+                <div class="luma-loader-text">Analyzing query, checking legal domain &amp; retrieving verified sources...</div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+        if True:
             classifier = get_classifier()
             domain_result = classifier.classify(query_to_process)
             category = domain_result["category"]
@@ -408,6 +487,9 @@ if query_to_process:
                 response_text = gen_result["answer"]
                 meta_data["provider"] = gen_result["provider"]
                 meta_data["latency"] = gen_result["latency"]
+
+            # Clear the loading animation now that we have a result
+            loader_placeholder.empty()
 
             # Display response with badges
             badges_html = "<div style='margin-bottom: 10px;'>"
