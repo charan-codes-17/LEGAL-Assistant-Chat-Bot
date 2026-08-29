@@ -15,7 +15,11 @@ from src.config import (
     OPENROUTER_MODEL,
     TEMPERATURE,
     MAX_OUTPUT_TOKENS,
-    FALLBACK_TO_OFFLINE_DEMO,
+    FALLBACK_TO_OFFLINE_DEMO,  # NOTE: imported but not referenced below. Offline mode
+    # is currently driven entirely by the `force_offline`/`preferred_provider`
+    # params passed in from app.py's sidebar toggle. Setting this env var alone
+    # has no effect. Either wire it in as a default for `force_offline` in
+    # generate_answer(), or drop the import to stop it looking load-bearing.
 )
 from src.prompts import LEGAL_SYSTEM_PROMPT, GROUNDED_QA_TEMPLATE
 from src.safety import format_response_with_citations, INSUFFICIENT_EVIDENCE_RESPONSE

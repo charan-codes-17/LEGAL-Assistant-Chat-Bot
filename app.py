@@ -364,6 +364,16 @@ if query_to_process:
                 meta_data["provider"] = "Scope Filter"
                 meta_data["latency"] = 0.01
 
+            # 3b. Empty input (classifier.py returns this category, but it was
+            # previously falling through to the full RAG pipeline unhandled)
+            elif category == "EMPTY_INPUT":
+                response_text = (
+                    "Please enter a question about Indian constitutional rights "
+                    "or arrest/detention procedures."
+                )
+                meta_data["provider"] = "Scope Filter"
+                meta_data["latency"] = 0.01
+
             # 4. In-scope legal query -> Vector Retrieval & LLM
             else:
                 retrieval = retriever.retrieve(
