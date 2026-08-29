@@ -159,11 +159,23 @@ class LLMClient:
                 }
 
             if is_sufficient and retrieval_data.get("chunks"):
-                top_chunk = retrieval_data["chunks"][0]
+                chunks = retrieval_data["chunks"]
+                if len(chunks) == 1:
+                    body = chunks[0]["text"]
+                else:
+                    # Synthesize from ALL retrieved chunks (not just the top-ranked one),
+                    # so multi-provision questions get a fuller offline answer instead of
+                    # being truncated to a single passage. Grouped under each chunk's
+                    # source title so the reader can see which provision each line covers.
+                    body = "\n\n".join(
+                        f"**{c.get('title') or c.get('source_id', 'Unknown Source')}**\n{c['text']}"
+                        for c in chunks
+                    )
                 synth_answer = (
                     f"### ⚖️ Legal Overview based on Verified Documents:\n\n"
-                    f"{top_chunk['text']}\n\n"
-                    f"*Note: Synthesized directly from verified knowledge base without live API call.*"
+                    f"{body}\n\n"
+                    f"*Note: Synthesized directly from verified knowledge base without live API call "
+                    f"({len(chunks)} relevant provision{'s' if len(chunks) != 1 else ''} shown).*"
                 )
                 formatted = format_response_with_citations(synth_answer, sources, include_disclaimer=True)
                 latency = round(time.time() - start_time, 3)
