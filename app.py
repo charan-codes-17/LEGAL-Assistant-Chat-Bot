@@ -101,6 +101,12 @@ st.markdown(
         border: 1px solid rgba(88, 166, 255, 0.4);
     }
     
+    .badge-unverified {
+        background-color: rgba(210, 153, 34, 0.2);
+        color: #d29922;
+        border: 1px solid rgba(210, 153, 34, 0.4);
+    }
+    
     .badge-offline {
         background-color: rgba(210, 153, 34, 0.2);
         color: #d29922;
@@ -147,7 +153,7 @@ if "messages" not in st.session_state:
         {
             "role": "assistant",
             "content": (
-                "Namaste! I am **LUMA**, your verified AI assistant for **Indian Constitutional Rights "
+                "Hi! I am **LUMA**, your verified AI assistant for **Indian Constitutional Rights "
                 "and Arrest/Detention Safeguards**.\n\n"
                 "You can ask me about:\n"
                 "- **Article 21** (Right to Life & Personal Liberty)\n"
@@ -305,6 +311,8 @@ for message in st.session_state.messages:
             cat = meta.get("category", "")
             if cat == "LEGAL_IN_SCOPE":
                 badges_html += f"<span class='pipeline-badge badge-in-scope'>✓ Domain: LEGAL ({meta.get('classifier_conf', 1.0)})</span>"
+            elif cat == "LEGAL_UNVERIFIED":
+                badges_html += f"<span class='pipeline-badge badge-unverified'>? Domain: UNVERIFIED, checking evidence ({meta.get('classifier_conf', 1.0)})</span>"
             elif cat == "OUT_OF_DOMAIN":
                 badges_html += "<span class='pipeline-badge badge-out-domain'>✗ Domain: OUT OF SCOPE</span>"
             else:
@@ -406,6 +414,8 @@ if query_to_process:
             badges_html = "<div style='margin-bottom: 10px;'>"
             if category == "LEGAL_IN_SCOPE":
                 badges_html += f"<span class='pipeline-badge badge-in-scope'>✓ Domain: LEGAL ({domain_result['confidence']})</span>"
+            elif category == "LEGAL_UNVERIFIED":
+                badges_html += f"<span class='pipeline-badge badge-unverified'>? Domain: UNVERIFIED, checking evidence ({domain_result['confidence']})</span>"
             elif category == "OUT_OF_DOMAIN":
                 badges_html += "<span class='pipeline-badge badge-out-domain'>✗ Domain: OUT OF SCOPE</span>"
             else:
