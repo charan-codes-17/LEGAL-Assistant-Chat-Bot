@@ -1,6 +1,6 @@
 """
 Multi-Provider LLM Integration and Orchestration Module
-Supports Google Gemini API, OpenRouter API, and automated fallback to deterministic offline cache.
+Supports Groq API, OpenRouter API, and automated fallback to deterministic offline cache.
 """
 import os
 import time
@@ -9,9 +9,9 @@ import requests
 from typing import Dict, Any, List, Optional
 
 from src.config import (
-    GEMINI_API_KEY,
+    GROQ_API_KEY,
+    GROQ_MODEL,
     OPENROUTER_API_KEY,
-    DEFAULT_MODEL,
     OPENROUTER_MODEL,
     TEMPERATURE,
     MAX_OUTPUT_TOKENS,
@@ -35,39 +35,43 @@ class LLMClient:
 
     def __init__(
         self,
-        api_key: Optional[str] = None,
-        model_name: str = DEFAULT_MODEL,
+        groq_key: Optional[str] = None,
+        groq_model: str = GROQ_MODEL,
         openrouter_key: Optional[str] = None,
         openrouter_model: str = OPENROUTER_MODEL,
     ):
-        self.api_key = api_key or GEMINI_API_KEY
-        self.model_name = model_name
+        self.groq_key = groq_key or GROQ_API_KEY
+        self.groq_model = groq_model
         self.openrouter_key = openrouter_key or OPENROUTER_API_KEY
         self.openrouter_model = openrouter_model
 
-    def _call_gemini(self, prompt: str, system_prompt: str, api_key: str) -> str:
-        from google import genai
-        from google.genai import types
-
-        client = genai.Client(api_key=api_key)
-        response = client.models.generate_content(
-            model=self.model_name,
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                system_instruction=system_prompt,
-                temperature=TEMPERATURE,
-                max_output_tokens=MAX_OUTPUT_TOKENS,
-                # Deliberately not setting thinking_config: MINIMAL is already
-                # gemini-3.1-flash-lite's default thinking level, and the field
-                # name/allowed values here have shifted across recent SDK point
-                # releases (flat thinking_level vs nested ThinkingConfig, and
-                # which enum values each model accepts). Relying on the model's
-                # own default avoids re-breaking this on the next SDK bump.
-            ),
+    def _call_groq(self, prompt: str, system_prompt: str, api_key: str) -> str:
+        headers = {
+            "Authorization": f"Bearer {api_key.strip()}",
+            "Content-Type": "application/json",
+        }
+        payload = {
+            "model": self.groq_model,
+            "messages": [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": prompt},
+            ],
+            "temperature": TEMPERATURE,
+            "max_tokens": MAX_OUTPUT_TOKENS,
+        }
+        resp = requests.post(
+            "https://api.groq.com/openai/v1/chat/completions",
+            headers=headers,
+            json=payload,
+            timeout=25,
         )
-        if response and response.text:
-            return response.text.strip()
-        raise ValueError("Empty response received from Gemini API.")
+        if resp.status_code == 200:
+            data = resp.json()
+            choices = data.get("choices", [])
+            if choices and "message" in choices[0]:
+                return choices[0]["message"]["content"].strip()
+            raise ValueError("Empty response received from Groq API.")
+        raise ValueError(f"Groq API error {resp.status_code}: {resp.text}")
 
     def _call_openrouter(
         self, prompt: str, system_prompt: str, api_key: str, model_name: Optional[str] = None
@@ -121,16 +125,16 @@ class LLMClient:
         self,
         query: str,
         retrieval_data: Dict[str, Any],
-        custom_gemini_key: Optional[str] = None,
+        custom_groq_key: Optional[str] = None,
         custom_openrouter_key: Optional[str] = None,
         force_offline: bool = False,
-        preferred_provider: str = "auto",  # 'gemini', 'openrouter', 'offline', 'auto'
+        preferred_provider: str = "auto",  # 'groq', 'openrouter', 'offline', 'auto'
     ) -> Dict[str, Any]:
         """
         Orchestrates grounded answer generation with multi-tiered fallback.
         """
         start_time = time.time()
-        gemini_key = (custom_gemini_key or self.api_key or GEMINI_API_KEY).strip()
+        groq_key = (custom_groq_key or self.groq_key or GROQ_API_KEY).strip()
         openrouter_key = (custom_openrouter_key or self.openrouter_key or OPENROUTER_API_KEY).strip()
 
         sources = retrieval_data.get("sources", [])
@@ -152,7 +156,7 @@ class LLMClient:
                 }
 
         # 2. If force_offline is requested or no API key is provided
-        if force_offline or preferred_provider == "offline" or (not gemini_key and not openrouter_key):
+        if force_offline or preferred_provider == "offline" or (not groq_key and not openrouter_key):
             cached = get_cached_demo_response(query)
             if cached:
                 latency = round(time.time() - start_time, 3)
@@ -209,29 +213,28 @@ class LLMClient:
         prompt = GROUNDED_QA_TEMPLATE.format(context=formatted_context, query=query)
         last_error = None
 
-        # Explicit user choice: "Google Gemini API" in the sidebar. This was
-        # previously a no-op — preferred_provider="gemini" was accepted as a
-        # parameter but never actually consulted, so the OpenRouter heuristic
-        # below always won if an OpenRouter key was also present.
-        if preferred_provider == "gemini" and gemini_key:
+        # Explicit user choice: "Groq API" in the sidebar.
+        if preferred_provider == "groq" and groq_key:
             try:
-                raw_answer = self._call_gemini(prompt, LEGAL_SYSTEM_PROMPT, gemini_key)
+                raw_answer = self._call_groq(prompt, LEGAL_SYSTEM_PROMPT, groq_key)
                 formatted = format_response_with_citations(raw_answer, sources, include_disclaimer=True)
                 latency = round(time.time() - start_time, 3)
                 return {
                     "answer": formatted,
                     "sources": sources,
-                    "provider": f"Live LLM (Gemini: {self.model_name})",
+                    "provider": f"Live LLM (Groq: {self.groq_model})",
                     "latency": latency,
                     "is_cached": False,
                     "status": "SUCCESS",
                 }
             except Exception as e:
-                last_error = f"Gemini Error: {e}"
+                last_error = f"Groq Error: {e}"
                 logger.warning(last_error)
 
-        # Prioritize OpenRouter if openrouter_key is provided and preferred or Gemini key is absent
-        if preferred_provider == "openrouter" or (openrouter_key and not gemini_key.startswith("AIza")):
+        # Prioritize OpenRouter if openrouter_key is provided and preferred or Groq key is absent.
+        # Groq API keys conventionally start with "gsk_"; used the same way the
+        # old "AIza" prefix check worked for Gemini, as a cheap validity signal.
+        if preferred_provider == "openrouter" or (openrouter_key and not groq_key.startswith("gsk_")):
             try:
                 raw_answer = self._call_openrouter(prompt, LEGAL_SYSTEM_PROMPT, openrouter_key)
                 formatted = format_response_with_citations(raw_answer, sources, include_disclaimer=True)
@@ -248,26 +251,26 @@ class LLMClient:
                 last_error = f"OpenRouter Error: {e}"
                 logger.warning(last_error)
 
-        # Try Gemini API if key is available (skip if the explicit gemini-first
+        # Try Groq API if key is available (skip if the explicit groq-first
         # branch above already tried and failed — no point calling it twice)
-        if gemini_key and preferred_provider != "gemini":
+        if groq_key and preferred_provider != "groq":
             try:
-                raw_answer = self._call_gemini(prompt, LEGAL_SYSTEM_PROMPT, gemini_key)
+                raw_answer = self._call_groq(prompt, LEGAL_SYSTEM_PROMPT, groq_key)
                 formatted = format_response_with_citations(raw_answer, sources, include_disclaimer=True)
                 latency = round(time.time() - start_time, 3)
                 return {
                     "answer": formatted,
                     "sources": sources,
-                    "provider": f"Live LLM (Gemini: {self.model_name})",
+                    "provider": f"Live LLM (Groq: {self.groq_model})",
                     "latency": latency,
                     "is_cached": False,
                     "status": "SUCCESS",
                 }
             except Exception as e:
-                last_error = f"Gemini Error: {e}"
+                last_error = f"Groq Error: {e}"
                 logger.warning(last_error)
 
-        # Secondary try: If Gemini failed and OpenRouter key is available
+        # Secondary try: If Groq failed and OpenRouter key is available
         if openrouter_key and "OpenRouter" not in (last_error or ""):
             try:
                 raw_answer = self._call_openrouter(prompt, LEGAL_SYSTEM_PROMPT, openrouter_key)
