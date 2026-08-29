@@ -57,9 +57,12 @@ class LLMClient:
                 system_instruction=system_prompt,
                 temperature=TEMPERATURE,
                 max_output_tokens=MAX_OUTPUT_TOKENS,
-                # Grounded QA over retrieved chunks doesn't need deep reasoning;
-                # minimal thinking keeps latency/cost down on flash-lite.
-                thinking_level="minimal",
+                # Deliberately not setting thinking_config: MINIMAL is already
+                # gemini-3.1-flash-lite's default thinking level, and the field
+                # name/allowed values here have shifted across recent SDK point
+                # releases (flat thinking_level vs nested ThinkingConfig, and
+                # which enum values each model accepts). Relying on the model's
+                # own default avoids re-breaking this on the next SDK bump.
             ),
         )
         if response and response.text:
