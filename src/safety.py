@@ -53,22 +53,76 @@ def format_response_with_citations(
     """
     Appends structured citation metadata to the generated response.
 
+    Sources are wrapped in an HTML <details>/<summary> accordion that is
+    collapsed by default ("📑 View Sources") and expands smoothly on click.
+    Streamlit renders this correctly when st.markdown(..., unsafe_allow_html=True)
+    is used in app.py.
+
     NOTE: The standard legal disclaimer is intentionally no longer appended
-    per-message here. It is now shown once as a static st.caption() fixed
-    beneath the chat input in app.py, instead of repeating on every
-    assistant reply. `include_disclaimer` is kept in the signature so the
-    existing call sites in llm.py (which still pass include_disclaimer=True)
-    don't need to change — the argument is now a no-op.
+    per-message here — it is shown once as a fixed caption beneath the chat
+    input. `include_disclaimer` is kept in the signature so existing call
+    sites in llm.py don't need to change; the argument is now a no-op.
     """
     parts = [answer.strip()]
 
     if sources:
-        parts.append("\n\n### 📑 Verified Sources Cited:")
+        # Build the inner source list as HTML list items
+        items_html = ""
         for idx, src in enumerate(sources, 1):
-            parts.append(
-                f"{idx}. **{src.get('title', 'Unknown Source')}**\n"
-                f"   - *Authority*: {src.get('authority', 'Government of India')}\n"
-                f"   - *Official Reference*: [{src.get('url', 'Official Document')}]({src.get('url', '#')})"
+            title = src.get("title", "Unknown Source")
+            authority = src.get("authority", "Government of India")
+            url = src.get("url", "#")
+            url_label = src.get("url", "Official Document")
+            items_html += (
+                f"<li style='margin-bottom:10px;'>"
+                f"<strong>{idx}. {title}</strong><br>"
+                f"<span style='color:#a0a0a0;font-size:0.88rem;'>"
+                f"Authority: {authority}</span><br>"
+                f"<a href='{url}' target='_blank' "
+                f"style='color:#60a5fa;font-size:0.88rem;text-decoration:none;'>"
+                f"🔗 {url_label}</a>"
+                f"</li>"
             )
+
+        accordion_html = f"""
+<details style="margin-top:18px;">
+  <summary style="
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      list-style: none;
+      padding: 6px 14px;
+      border-radius: 7px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: #111214;
+      color: #f5f5f5;
+      font-size: 0.85rem;
+      font-weight: 600;
+      user-select: none;
+      transition: background 0.15s, border-color 0.15s;
+  "
+  onmouseover="this.style.borderColor='#3b82f6';this.style.background='#16181d';"
+  onmouseout="this.style.borderColor='rgba(255,255,255,0.12)';this.style.background='#111214';"
+  >
+    📑 View Sources <span style="color:#8a8a8a;font-weight:400;">({len(sources)} cited)</span>
+  </summary>
+  <div style="
+      margin-top: 12px;
+      padding: 14px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: #0c0c0d;
+  ">
+    <p style="margin:0 0 10px 0;font-size:0.8rem;color:#8a8a8a;letter-spacing:0.04em;text-transform:uppercase;">
+      Verified Sources Cited
+    </p>
+    <ol style="margin:0;padding-left:18px;color:#e0e0e0;font-size:0.9rem;line-height:1.7;">
+      {items_html}
+    </ol>
+  </div>
+</details>"""
+
+        parts.append(accordion_html)
 
     return "\n".join(parts)
