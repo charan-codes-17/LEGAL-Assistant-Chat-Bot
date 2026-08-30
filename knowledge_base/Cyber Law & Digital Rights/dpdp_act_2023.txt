@@ -1,0 +1,14 @@
+[SOURCE_ID: DPDP-ACT-2023]
+[TITLE: Digital Personal Data Protection Act, 2023 — User Consent, Data Erasure & Fiduciary Duties]
+[AUTHORITY: Ministry of Electronics and Information Technology (MeitY), Government of India]
+[URL: https://xn--m1bdba5a7gresc7dsa.xn--11b7cb3a6a.xn--h2brj9c/documents/act-and-policies/digital-personal-data-protection-rules-2025-gDOxUjMtQWa?pageTitle=Digital-Personal-Data-Protection-Rules-2025]
+
+DATA PRINCIPAL RIGHTS & CONSENT REQUIREMENTS:
+1. Free & Informed Consent: Data processing requires specific, unambiguous, and revocable consent from the Data Principal for explicitly defined lawful purposes.
+2. Right to Data Erasure & Correction: Entitles users to request erasure of personal data that is no longer necessary for the original processing purpose, along with correction of incomplete or outdated data.
+3. Grievance Redressal: Right of individuals to access details of personal data being processed and seek effective grievance resolution mechanisms from entities.
+
+DATA FIDUCIARY OBLIGATIONS & BREACH NOTIFICATION:
+1. Personal Data Protection Safeguards: Mandatory implementation of reasonable security safeguards to prevent personal data breaches during processing.
+2. Breach Notification Mandate: Obligation of Data Fiduciaries to notify the Data Protection Board of India and affected individuals immediately in the event of any personal data breach.
+3. Data Minimization & Storage Limitation: Mandates deleting personal data as soon as the specified processing purpose is fulfilled or consent is withdrawn.

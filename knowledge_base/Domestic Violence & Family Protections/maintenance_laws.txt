@@ -1,0 +1,16 @@
+[SOURCE_ID: MAINTENANCE-SEC-125-BNSS-144]
+[TITLE: Maintenance Rights under Section 125 CrPC / Section 144 BNSS — Spouses, Children & Parents]
+[AUTHORITY: Ministry of Law and Justice / Ministry of Home Affairs, Government of India]
+[URL: https://www.indiacode.nic.in/bitstream/123456789/21544/1/the_bharatiya_nagarik_suraksha_sanhita,_2023.pdf]
+
+MAINTENANCE STATUTORY PROVISIONS & SCOPE:
+1. Statutory Right to Maintenance (CrPC Sec 125 / BNSS Sec 144): Creates a summary statutory remedy compelling individuals with sufficient means to maintain dependents unable to maintain themselves.
+2. Protected Dependents: Extends enforceable maintenance rights to:
+   - Legally wedded wives (who have not remarried and have not deserted without sufficient cause).
+   - Minor legitimate or illegitimate children (whether married or unmarried).
+   - Major children with physical/mental abnormality or injury preventing self-support.
+   - Aged or infirm fathers and mothers.
+
+INTERIM MAINTENANCE & ENFORCEMENT:
+1. Interim Relief Timeline: Applications for interim monthly allowance and proceeding expenses must be disposed of within 60 days from the date of notice service to the respondent.
+2. Enforcement & Non-Compliance: Authorizes the court to issue distress warrants for levying fines or order imprisonment up to 1 month for every breach of maintenance orders.

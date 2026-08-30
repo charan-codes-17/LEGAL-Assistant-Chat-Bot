@@ -1,0 +1,10 @@
+[SOURCE_ID: IT-ACT-2000]
+[TITLE: Information Technology Act, 2000 — Cyberstalking, Identity Theft, Hacking & Financial Fraud]
+[AUTHORITY: Ministry of Electronics and Information Technology (MeitY) / Legislative Department]
+[URL: https://www.indiacode.nic.in/bitstream/123456789/13116/1/it_act_2000_updated.pdf]
+
+CYBER OFFENCES & PENAL PROVISIONS:
+1. Unauthorized Access & Hacking (Section 43 & Section 66): Penalizes damaging, downloading, extracting, or gaining unauthorized access to computer systems, data, or networks without permission.
+2. Identity Theft (Section 66C): Imposes strict criminal liability for fraudulently or dishonestly using the electronic signature, password, or unique identification feature of any other person.
+3. Online Financial Fraud & Cheating (Section 66D): Penalizes cheating by personation by using computer resources or communication devices for fraudulent monetary gain.
+4. Privacy Violation & Cyberstalking (Section 66E & Section 67): Punishes intentional violation of personal privacy, transmitting obscene material, or tracking and harassing individuals online without consent.

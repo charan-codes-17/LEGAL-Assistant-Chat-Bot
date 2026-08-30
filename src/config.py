@@ -37,4 +37,9 @@ TOP_K_CHUNKS = int(os.getenv("TOP_K_CHUNKS", "3"))
 
 # Demo & Reliability
 FALLBACK_TO_OFFLINE_DEMO = os.getenv("FALLBACK_TO_OFFLINE_DEMO", "true").lower() == "true"
-SYSTEM_DOMAIN = "Indian Constitutional Law & Arrest/Detention Rights"
+SYSTEM_DOMAIN = (
+    "Indian Constitutional Law, Arrest/Detention Rights, Consumer Rights & "
+    "E-Commerce Law, Cyber Law & Digital Rights, Employment & Workplace "
+    "Rights, Domestic Violence & Family Protections, and Property & "
+    "Tenancy Law"
+)

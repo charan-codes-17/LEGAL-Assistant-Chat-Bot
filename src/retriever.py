@@ -12,8 +12,8 @@ from typing import List, Dict, Any, Tuple
 import numpy as np
 
 from src.config import (
-    CONSTITUTION_DIR,
-    ARREST_DIR,
+    KNOWLEDGE_BASE_DIR,
+    METADATA_DIR,
     SOURCES_JSON_PATH,
     EVIDENCE_THRESHOLD,
     TOP_K_CHUNKS,
@@ -109,7 +109,15 @@ class HybridRetriever:
 
     def _build_index(self):
         self.chunks = []
-        doc_files = list(CONSTITUTION_DIR.glob("*.txt")) + list(ARREST_DIR.glob("*.txt"))
+        # Recursively pick up every .txt file under knowledge_base/, in any
+        # subfolder (constitution/, arrest_and_detention/, and any future
+        # domain folder such as consumer_rights/ or cyber_law/), so new
+        # domains are indexed automatically without touching this file again.
+        # metadata/ only holds sources.json, never .txt, so it's naturally excluded.
+        doc_files = sorted(
+            f for f in KNOWLEDGE_BASE_DIR.rglob("*.txt")
+            if f.is_file() and METADATA_DIR not in f.parents
+        )
         for doc_file in doc_files:
             self.chunks.extend(self._chunk_document(doc_file))
 

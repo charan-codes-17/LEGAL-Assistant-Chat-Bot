@@ -27,7 +27,17 @@ class DomainClassifier:
         r"\b(constitution|fundamental\s+rights?|liberty|right\s+to\s+life|personal\s+liberty|equality\s+before\s+law)\b",
         r"\b(arrest|arrested|detained|detention|police|custody|magistrate|24\s*hours?|grounds\s+of\s+arrest)\b",
         r"\b(bail|bailable|non-bailable|crpc|bnss|cognizable|warrant|interrogation|memo\s+of\s+arrest)\b",
-        r"\b(habeas\s+corpus|writ|high\s+court|supreme\s+court|illegal\s+detention|remand|legal\s+aid|nalsa|dlsa|d\.?k\.?\s*basu)\b"
+        r"\b(habeas\s+corpus|writ|high\s+court|supreme\s+court|illegal\s+detention|remand|legal\s+aid|nalsa|dlsa|d\.?k\.?\s*basu)\b",
+        # Consumer Rights & E-Commerce
+        r"\b(consumer\s+rights?|consumer\s+protection|e-?commerce|online\s+shopping|defective\s+product|deficiency\s+in\s+service|unfair\s+trade\s+practice|consumer\s+forum|consumer\s+court|refund|warranty|guarantee|misleading\s+advertisement|fake\s+product|broken\s+product|damaged\s+product|cheated\s+(by|online)|consumer\s+complaint|file\s+a\s+complaint)\b",
+        # Cyber Law & Digital Rights
+        r"\b(cyber\s*crime|cyber\s*bullying|cyber\s*stalking|hack\w*|data\s+privacy|data\s+protection|it\s+act|information\s+technology\s+act|phishing|online\s+fraud|online\s+scam|upi\s+fraud|upi\s+scam|identity\s+theft|digital\s+rights|personal\s+data|blackmail\w*|extort\w*|leaked\s+photos?|private\s+pictures?|revenge\s+porn|impersonat\w*|fake\s+profile|morphed\s+photos?|online\s+threat\w*|rape\s+threat\w*|internet\s+threat\w*)\b",
+        # Employment & Workplace Rights
+        r"\b(employment|workplace|employer|employee|termination|wrongful\s+termination|fired|laid\s+off|layoff|salary|wages?|labou?r\s+law|industrial\s+dispute|sexual\s+harassment|posh\s+act|provident\s+fund|\bpf\b|gratuity|notice\s+period|resignation|sue\s+(my|the)\s+(company|employer))\b",
+        # Domestic Violence & Family Protections
+        r"\b(domestic\s+violence|dowry|cruelty|maintenance|divorce|family\s+court|498a|protection\s+of\s+women|matrimonial|child\s+custody|\bcustody\b|alimony|hit\w*\s+me|beat\w*\s+me|abus\w*|tortur\w*|restraining\s+order|protection\s+order)\b",
+        # Property & Tenancy Law
+        r"\b(tenant|landlord|owner\s+won'?t\s+return|rent|eviction|lease|tenancy|rent\s+control|property\s+dispute|security\s+deposit|sale\s+deed|encroachment|possession\s+of\s+(my\s+)?flat|delayed?\s+possession|builder\s+delay\w*|land\s+dispute|register\s+property|property\s+registration)\b",
     ]
 
     # Legal topics outside our verified scope

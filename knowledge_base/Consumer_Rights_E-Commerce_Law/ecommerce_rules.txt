@@ -1,0 +1,14 @@
+[SOURCE_ID: ECOM-RULES-2020]
+[TITLE: Consumer Protection (E-Commerce) Rules, 2020 — Marketplace Transparency & Seller Liability]
+[AUTHORITY: Ministry of Consumer Affairs, Food and Public Distribution, Government of India]
+[URL: https://consumeraffairs.gov.in/public/upload/files/E%20commerce%20rules_0_1732704315.pdf]
+
+MARKETPLACE TRANSPARENCY & SELLER LIABILITY:
+1. Mandatory Seller Details: Display of legal entity name, principal geographic address, customer care details, and seller ratings.
+2. Non-Discrimination: Prohibition against manipulating search indices or favoring specific sellers to disadvantage consumers.
+3. Price & Refund Transparency: Mandatory disclosure of total price broken down alongside break-ups, delivery fees, return policies, and statutory return windows.
+
+GRIEVANCE REDRESSAL TIMELINES:
+1. Nodal Officer Appointment: Mandatory designation of a Grievance Officer for handling consumer issues.
+2. Acknowledgment Window: Mandatory acknowledgment of any consumer complaint within 48 hours of receipt.
+3. Redressal Resolution Timeline: Complete resolution of consumer complaints within 1 month from the date of receipt.

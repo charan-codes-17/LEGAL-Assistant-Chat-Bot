@@ -1,0 +1,14 @@
+[SOURCE_ID: RERA-ACT-2016]
+[TITLE: Real Estate (Regulation and Development) Act, 2016 — Mandatory Registration, Delay Compensation & Defect Liability]
+[AUTHORITY: Ministry of Housing and Urban Affairs, Government of India]
+[URL: https://www.mohua.gov.in/documents/acts-and-policies/rera-YDM4EzMtQWa?pageTitle=Real-Estate-(Regulation-and-Development)-Act,-2016-%5BRERA%5D]
+
+PROJECT REGISTRATION & COMPLIANCE:
+1. Mandatory Registration: Mandatory registration with the State RERA authority for all commercial and residential real estate projects where land area exceeds 500 square meters or number of apartments exceeds 8.
+2. Escrow Account Rule: Promoters must deposit 70% of funds realized from allottees into a dedicated bank account to cover construction and land costs.
+3. Information Disclosure: Promoters must publicly declare sanctioned plans, layout plans, implementation schedules, and legal title status on the RERA portal.
+
+BUILDER DELAY COMPENSATION & STRUCTURAL DEFECT LIABILITY:
+1. Delay Interest & Refund: In case of delay in handing over possession, allottees have the right to claim a full refund with interest or receive monthly interest payments for every month of delay at statutory rates.
+2. Structural Defect Liability (Section 14(3)): Builder is liable to rectify any structural defect or defect in workmanship brought to notice within 5 years from possession date, without extra charge within 30 days.
+3. Adherence to Sanctioned Plans: Promoters cannot make additions or alterations to sanctioned plans without the prior written consent of two-thirds of the allottees.
