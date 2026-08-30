@@ -5,7 +5,9 @@ Streamlit Web Application for BUILD-A-BOT Competition
 import streamlit as st
 import time
 import json
+import base64
 from pathlib import Path
+from PIL import Image
 
 from src.config import (
     GROQ_API_KEY,
@@ -25,10 +27,25 @@ from src.safety import (
     AMBIGUOUS_QUERY_RESPONSE,
 )
 
+# Logo — used for both the browser favicon and the on-page header.
+# Falls back to the original emoji if the file is ever missing so the
+# app never breaks just because assets/LUMA_Logo.png isn't present.
+LOGO_PATH = Path(__file__).resolve().parent / "assets" / "new_favicon.png"
+try:
+    PAGE_ICON = Image.open(LOGO_PATH)
+    _LOGO_B64 = base64.b64encode(LOGO_PATH.read_bytes()).decode()
+    _LOGO_HTML = (
+        f'<img src="data:image/png;base64,{_LOGO_B64}" '
+        f'height="42" style="vertical-align:middle;margin-right:12px;">'
+    )
+except Exception:
+    PAGE_ICON = ""
+    _LOGO_HTML = ""
+
 # Page Setup
 st.set_page_config(
     page_title="LUMA — Legal Understanding with Modern Assistant",
-    page_icon="⚖️",
+    page_icon=PAGE_ICON,
     layout="wide",
     initial_sidebar_state="collapsed",
 )
@@ -398,10 +415,10 @@ st.markdown(
 
 # Header
 st.markdown(
-    """
+    f"""
     <div style="text-align: center; margin-bottom: 20px;">
         <span style="font-size: 2.1rem; font-weight: 700; color: #ffffff;">
-            ⚖️ LUMA — Your Legal Assistant
+            {_LOGO_HTML}LUMA — Your Legal Assistant
         </span>
     </div>
     """,
@@ -414,10 +431,10 @@ if "messages" not in st.session_state:
         {
             "role": "assistant",
             "content": (
-                 "Hi, I’m **LUMA** — a chatbot made for **L**egal **U**nderstanding with **M**odern **A**ssistance \n \n"
-                "LUMA simplifies **Indian constitutional rights** and **arrest & detention safeguards**.  \n"
-                "Whether you need clarity on your rights, court guidelines, legal remedies, or free legal aid, **LUMA** translates complex statutes into plain, accessible answers.\n \n"
-                "Every response is grounded in **reliable official legal sources**. \n"
+                "Hi, I’m **LUMA** — a chatbot made for **L**egal **U**nderstanding with **M**odern **A**ssistance \n \n"
+                "You can ask me about:  \n"
+                "**Constitutional rights**, **arrest & detention**, **consumer protection**, **cyber law & privacy**, **workplace rights (POSH)**, **tenancy & property**, and **family law**.  \n \n"
+                "Every answer is grounded in verified Acts, Articles, and court judgments — never guessed.\n\n"
                 "**If the evidence isn’t there, LUMA won’t make it up.**\n"
                 ),
             "meta": None,
