@@ -1,0 +1,25 @@
+[SOURCE_ID: BNSS-BAIL-PROVISIONS]
+[TITLE: Bharatiya Nagarik Suraksha Sanhita, 2023 — Sections 478-483: Provisions as to Bail]
+[AUTHORITY: Government of India / Ministry of Home Affairs]
+[URL: https://www.indiacode.nic.in/bitstream/123456789/21544/1/the_bharatiya_nagarik_suraksha_sanhita,_2023.pdf]
+
+TEXT OF PROVISION:
+Section 478 — In what cases bail to be taken (formerly Section 436 CrPC):
+(1) When any person other than a person accused of a non-bailable offence is arrested or detained without warrant by an officer in charge of a police station, or appears or is brought before a Court, and is prepared at any time while in the custody of such officer or at any stage of the proceeding before such Court to give bail, such person shall be released on bail. Provided that such officer or Court, if he or it thinks fit, may, and shall, if such person is indigent and is unable to furnish surety, instead of taking bail bond from such person, discharge him on his executing a bond for his appearance.
+
+Section 480 — When bail may be taken in case of non-bailable offence (formerly Section 437 CrPC):
+(1) When any person accused of, or suspected of, the commission of any non-bailable offence is arrested or detained without warrant by an officer in charge of a police station or appears or is brought before a Court other than the High Court or Court of Session, he may be released on bail, but such person shall not be so released if there appear reasonable grounds for believing that he has been guilty of an offence punishable with death or imprisonment for life, or, being a cognizable offence, he has been previously convicted of certain serious offences — subject to exceptions for persons who are children, women, or sick or infirm.
+(6) If, in any case triable by a Magistrate, the trial of a person accused of any non-bailable offence is not concluded within sixty days from the first date fixed for taking evidence, such person shall, if in custody during the whole of that period, be released on bail, unless the Magistrate records reasons in writing for not doing so.
+
+Section 482 — Direction for grant of bail to person apprehending arrest (anticipatory bail; formerly Section 438 CrPC):
+(1) When any person has reason to believe that he may be arrested on an accusation of having committed a non-bailable offence, he may apply to the High Court or the Court of Session for a direction under this section; and that Court may, if it thinks fit, direct that in the event of such arrest, he shall be released on bail.
+(4) Nothing in this section shall apply to any case involving the arrest of a person accused of an offence under Section 65 or Section 70(2) of the Bharatiya Nyaya Sanhita, 2023 (offences of rape and gang rape).
+
+CORE LEGAL PRINCIPLES AND JURISPRUDENCE:
+1. Bail in bailable offences under Section 478 is an absolute and indefeasible right, not a matter of judicial or police discretion — affirmed in Rasiklal v. Kishore (Supreme Court), carrying forward the settled position from the old CrPC Section 436 unchanged into BNSS.
+
+2. In non-bailable offences under Section 480, bail is discretionary, weighed against factors such as the severity of the offence, risk of tampering with evidence, and the accused's criminal history; the provision directs special leniency for children, women, and the sick or infirm.
+
+3. Anticipatory bail under Section 482 (replacing CrPC Section 438) allows a person who reasonably fears arrest to seek a pre-arrest protective direction from the High Court or Court of Session, so they are released on bail immediately if the feared arrest occurs. The Supreme Court's Constitution Bench in Sushila Aggarwal v. State (NCT of Delhi), (2020) 5 SCC 1, confirmed anticipatory bail need not be time-limited and can extend until the end of trial.
+
+4. Section 479 additionally introduces a "default bail" safeguard for undertrial prisoners: the Superintendent of Jail must proactively apply for bail once an undertrial has served one-third (first-time offenders) or one-half of the maximum possible sentence for their alleged offence, except where the offence carries death or life imprisonment.

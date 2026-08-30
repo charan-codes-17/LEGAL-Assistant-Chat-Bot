@@ -98,6 +98,138 @@
       "url": "https://indiankanoon.org/doc/501198/",
       "official": true,
       "retrieved_date": "2026-08-30"
+    },
+    {
+      "id": "CONST-ART-20",
+      "title": "Constitution of India — Article 20: Protection in respect of conviction for offences",
+      "provision": "Article 20",
+      "jurisdiction": "India",
+      "topic": "Fundamental Rights",
+      "authority": "Government of India / Legislative Department",
+      "url": "https://lddashboard.legislative.gov.in/constitution-of-india",
+      "official": true,
+      "retrieved_date": "2026-08-30"
+    },
+    {
+      "id": "BNSS-BAIL-PROVISIONS",
+      "title": "Bharatiya Nagarik Suraksha Sanhita, 2023 — Sections 478-483: Provisions as to Bail",
+      "provision": "Sections 478-483",
+      "jurisdiction": "India",
+      "topic": "Criminal Procedure / Bail",
+      "authority": "Government of India / Ministry of Home Affairs",
+      "url": "https://www.indiacode.nic.in/bitstream/123456789/21544/1/the_bharatiya_nagarik_suraksha_sanhita,_2023.pdf",
+      "official": true,
+      "retrieved_date": "2026-08-30"
+    },
+    {
+      "id": "CPA-2019-RIGHTS",
+      "title": "Consumer Protection Act, 2019 — Rights, Unfair Trade Practices & Statutory Remedies",
+      "provision": "Act No. 35 of 2019",
+      "jurisdiction": "India",
+      "topic": "Consumer Law — Statutory Consumer Rights & Product Liability",
+      "authority": "Ministry of Consumer Affairs, Food and Public Distribution, Government of India",
+      "url": "https://consumeraffairs.gov.in/pages/consumer-protection-acts",
+      "official": true,
+      "retrieved_date": "2026-08-30"
+    },
+    {
+      "id": "ECOM-RULES-2020",
+      "title": "Consumer Protection (E-Commerce) Rules, 2020 — Marketplace Transparency & Seller Liability",
+      "provision": "G.S.R. 452(E)",
+      "jurisdiction": "India",
+      "topic": "Consumer Law — E-Commerce & Digital Marketplace Regulations",
+      "authority": "Ministry of Consumer Affairs, Food and Public Distribution, Government of India",
+      "url": "https://consumeraffairs.gov.in/public/upload/files/E%20commerce%20rules_0_1732704315.pdf",
+      "official": true,
+      "retrieved_date": "2026-08-30"
+    },
+    {
+      "id": "IT-ACT-2000",
+      "title": "Information Technology Act, 2000 — Cyberstalking, Identity Theft, Hacking & Financial Fraud",
+      "provision": "Act No. 21 of 2000",
+      "jurisdiction": "India",
+      "topic": "Cyber Law — Computer Offences, Hacking & Digital Privacy",
+      "authority": "Ministry of Electronics and Information Technology (MeitY) / Legislative Department",
+      "url": "https://www.indiacode.nic.in/bitstream/123456789/13116/1/it_act_2000_updated.pdf",
+      "official": true,
+      "retrieved_date": "2026-08-30"
+    },
+    {
+      "id": "DPDP-ACT-2023",
+      "title": "Digital Personal Data Protection Act, 2023 — User Consent, Data Erasure & Fiduciary Duties",
+      "provision": "Act No. 22 of 2023",
+      "jurisdiction": "India",
+      "topic": "Digital Rights — Personal Data Protection & Privacy Obligations",
+      "authority": "Ministry of Electronics and Information Technology (MeitY), Government of India",
+      "url": "https://xn--m1bdba5a7gresc7dsa.xn--11b7cb3a6a.xn--h2brj9c/documents/act-and-policies/digital-personal-data-protection-rules-2025-gDOxUjMtQWa?pageTitle=Digital-Personal-Data-Protection-Rules-2025",
+      "official": true,
+      "retrieved_date": "2026-08-30"
+    },
+    {
+      "id": "POSH-ACT-2013",
+      "title": "Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "provision": "Act No. 14 of 2013",
+      "jurisdiction": "India",
+      "topic": "Workplace Rights — POSH, Internal Complaints Committee & Employee Safety",
+      "authority": "Ministry of Women and Child Development, Government of India",
+      "url": "https://wcd.nic.in/documents/uploaded/1710219823.pdf",
+      "official": true,
+      "retrieved_date": "2026-08-30"
+    },
+    {
+      "id": "LABOUR-EMPLOYMENT-BASICS",
+      "title": "Industrial Disputes Act, 1947 & Maternity Benefit Act, 1961 — Termination, Severance & Maternity Safeguards",
+      "provision": "Act No. 14 of 1947 / Act No. 53 of 1961",
+      "jurisdiction": "India",
+      "topic": "Employment Law — Retrenchment Compensation, Termination & Maternity Entitlements",
+      "authority": "Ministry of Labour and Employment, Government of India",
+      "url": "https://www.labour.gov.in/documents/acts-and-policies/industrial-relations-cDO3MTMtQWa?pageTitle=Industrial-Relations-(Act-and-Rules)",
+      "official": true,
+      "retrieved_date": "2026-08-30"
+    },
+    {
+      "id": "PWDVA-ACT-2005",
+      "title": "Protection of Women from Domestic Violence Act, 2005 — Emergency Orders & Residence Rights",
+      "provision": "Act No. 43 of 2005",
+      "jurisdiction": "India",
+      "topic": "Family Law — Domestic Violence Reliefs, Shared Household & Maintenance",
+      "authority": "Ministry of Women and Child Development, Government of India",
+      "url": "https://wcd.gov.in/documents/uploaded/1710219616.pdf",
+      "official": true,
+      "retrieved_date": "2026-08-30"
+    },
+    {
+      "id": "MAINTENANCE-SEC-125-BNSS-144",
+      "title": "Maintenance Rights under Section 125 CrPC / Section 144 BNSS — Spouses, Children & Parents",
+      "provision": "CrPC Sec 125 / BNSS Sec 144",
+      "jurisdiction": "India",
+      "topic": "Family Law — Statutory Maintenance for Dependent Spouses, Children and Parents",
+      "authority": "Ministry of Law and Justice / Ministry of Home Affairs, Government of India",
+      "url": "https://www.indiacode.nic.in/bitstream/123456789/21544/1/the_bharatiya_nagarik_suraksha_sanhita,_2023.pdf",
+      "official": true,
+      "retrieved_date": "2026-08-30"
+    },
+    {
+      "id": "RERA-ACT-2016",
+      "title": "Real Estate (Regulation and Development) Act, 2016 — Mandatory Registration, Delay Compensation & Defect Liability",
+      "provision": "Act No. 16 of 2016",
+      "jurisdiction": "India",
+      "topic": "Real Estate Law — Builder Liabilities, Project Registration & Buyer Protection",
+      "authority": "Ministry of Housing and Urban Affairs, Government of India",
+      "url": "https://www.mohua.gov.in/documents/acts-and-policies/rera-YDM4EzMtQWa?pageTitle=Real-Estate-(Regulation-and-Development)-Act,-2016-%5BRERA%5D",
+      "official": true,
+      "retrieved_date": "2026-08-30"
+    },
+    {
+      "id": "MODEL-TENANCY-ACT-2021",
+      "title": "Model Tenancy Act, 2021 — Eviction Grounds, Security Deposit Caps & Maintenance Protocols",
+      "provision": "Model Legislation Framework, 2021",
+      "jurisdiction": "India",
+      "topic": "Tenancy Law — Landlord-Tenant Rights, Security Deposit Caps & Eviction Rules",
+      "authority": "Ministry of Housing and Urban Affairs, Government of India",
+      "url": "https://prsindia.org/billtrack/the-model-tenancy-act-2021",
+      "official": true,
+      "retrieved_date": "2026-08-30"
     }
   ]
 }

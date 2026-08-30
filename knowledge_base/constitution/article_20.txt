@@ -1,0 +1,20 @@
+[SOURCE_ID: CONST-ART-20]
+[TITLE: Constitution of India — Article 20: Protection in respect of conviction for offences]
+[AUTHORITY: Government of India / Legislative Department]
+[URL: https://lddashboard.legislative.gov.in/constitution-of-india]
+
+TEXT OF PROVISION:
+(1) No person shall be convicted of any offence except for violation of a law in force at the time of the commission of the Act charged as an offence, nor be subjected to a penalty greater than that which might have been inflicted under the law in force at the time of the commission of the offence.
+
+(2) No person shall be prosecuted and punished for the same offence more than once.
+
+(3) No person accused of any offence shall be compelled to be a witness against himself.
+
+CORE LEGAL PRINCIPLES AND JURISPRUDENCE:
+1. Article 20 provides three distinct protections to any person accused of an offence: protection against ex post facto (retrospective) criminal laws (clause 1), protection against double jeopardy — being prosecuted and punished twice for the same offence (clause 2), and protection against self-incrimination — the right not to be compelled to testify against oneself (clause 3).
+
+2. Along with Article 21, Article 20 is one of only two fundamental rights that cannot be suspended even during a national emergency under Article 359, reflecting its status as a core safeguard against arbitrary state power in criminal proceedings.
+
+3. The protection under Article 20 applies to all persons — citizens and non-citizens alike — and is available at every stage of a criminal proceeding, not merely at trial.
+
+4. Article 20(3)'s protection against self-incrimination has been interpreted by the Supreme Court as prohibiting the compulsion of an accused person to make a statement or produce evidence usable against them, forming part of the constitutional basis for the right to silence during police interrogation.

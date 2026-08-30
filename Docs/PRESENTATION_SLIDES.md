@@ -100,4 +100,4 @@
   - Transparent legal disclaimers and verified citation cards.
   - Future roadmap: Expansion to regional Indian languages (Tamil, Hindi) and voice interface for rural citizens.
 - **Speaker Script (20s)**:
-  > *"In summary, LUMA is a reliable, grounded, and ethically safeguarded legal assistant ready for real-world impact and competition evaluation. Thank you, and we welcome your questions!"*
+  > *"In summary, LUMA (Legal Understanding with Modern Assistance) is a reliable, grounded, and ethically safeguarded legal assistant ready for real-world impact and competition evaluation. Thank you, and we welcome your questions!"*
