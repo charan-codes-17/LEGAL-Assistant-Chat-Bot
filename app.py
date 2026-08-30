@@ -414,16 +414,12 @@ if "messages" not in st.session_state:
         {
             "role": "assistant",
             "content": (
-                "Hi! I am **LUMA**, your verified AI assistant for **Indian Constitutional Rights "
-                "and Arrest/Detention Safeguards**.\n\n"
-                "You can ask me about:\n"
-                "- **Article 21** (Right to Life & Personal Liberty)\n"
-                "- **Article 22 & CrPC** (Grounds of arrest, mandatory 24-hr magistrate production)\n"
-                "- **D.K. Basu Guidelines** (Arrest memo, medical check, family intimation)\n"
-                "- **Article 39A & NALSA** (Free Legal Aid)\n"
-                "- **Articles 32 & 226** (Writ of *Habeas Corpus* for unlawful detention)\n\n"
-                "💡 *Click any of the challenge questions below or type your own question.*"
-            ),
+                 "Hi, I’m **LUMA** — a chatbot made for **L**egal **U**nderstanding with **M**odern **A**ssistance \n \n"
+                "LUMA simplifies **Indian constitutional rights** and **arrest & detention safeguards**.  \n"
+                "Whether you need clarity on your rights, court guidelines, legal remedies, or free legal aid, **LUMA** translates complex statutes into plain, accessible answers.\n \n"
+                "Every response is grounded in **reliable official legal sources**. \n"
+                "**If the evidence isn’t there, LUMA won’t make it up.**\n"
+                ),
             "meta": None,
         }
     ]
