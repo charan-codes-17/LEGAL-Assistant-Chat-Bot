@@ -15,37 +15,37 @@ from src.safety import (
 SRC_ART_21 = {
     "title": "Constitution of India — Article 21: Protection of Life and Personal Liberty",
     "authority": "Government of India / Legislative Department",
-    "url": "https://lddashboard.nic.in/sites/default/files/coi-4March2016.pdf",
+    "url": "https://lddashboard.legislative.gov.in/constitution-of-india",
 }
 
 SRC_ART_22 = {
     "title": "Constitution of India — Article 22: Protection Against Arrest and Detention",
     "authority": "Government of India / Legislative Department",
-    "url": "https://lddashboard.nic.in/sites/default/files/coi-4March2016.pdf",
+    "url": "https://lddashboard.legislative.gov.in/constitution-of-india",
 }
 
 SRC_CRPC_ARREST = {
     "title": "Code of Criminal Procedure, 1973 / BNSS 2023 — Statutory Rights on Arrest",
     "authority": "Ministry of Law and Justice, Government of India",
-    "url": "https://www.indiacode.nic.in/handle/123456789/1611",
+    "url": "https://www.indiacode.nic.in/bitstream/123456789/15272/1/the_code_of_criminal_procedure,_1973.pdf",
 }
 
 SRC_CRPC_24HR = {
     "title": "CrPC Section 57 & Section 167 / Article 22(2) — 24-Hour Production Limit",
     "authority": "Ministry of Law and Justice, Government of India",
-    "url": "https://www.indiacode.nic.in/handle/123456789/1611",
+    "url": "https://www.indiacode.nic.in/bitstream/123456789/15272/1/the_code_of_criminal_procedure,_1973.pdf",
 }
 
 SRC_HABEAS_CORPUS = {
     "title": "Constitution of India — Articles 32 and 226: Writs (Habeas Corpus)",
     "authority": "Supreme Court of India & High Courts",
-    "url": "https://lddashboard.nic.in/sites/default/files/coi-4March2016.pdf",
+    "url": "https://lddashboard.legislative.gov.in/constitution-of-india",
 }
 
 SRC_DK_BASU = {
     "title": "Supreme Court Landmark Judgment: D.K. Basu v. State of West Bengal (1997) 1 SCC 416",
     "authority": "Supreme Court of India",
-    "url": "https://main.sci.gov.in/judgment",
+    "url": "https://indiankanoon.org/doc/501198/",
 }
 
 SRC_LEGAL_AID = {

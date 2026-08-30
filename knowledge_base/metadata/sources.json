@@ -7,9 +7,9 @@
       "jurisdiction": "India",
       "topic": "Fundamental Rights — Right to Equality",
       "authority": "Government of India / Legislative Department",
-      "url": "https://lddashboard.nic.in/sites/default/files/coi-4March2016.pdf",
+      "url": "https://lddashboard.legislative.gov.in/constitution-of-india",
       "official": true,
-      "retrieved_date": "2026-08-27"
+      "retrieved_date": "2026-08-30"
     },
     {
       "id": "CONST-ART-19",
@@ -18,9 +18,9 @@
       "jurisdiction": "India",
       "topic": "Fundamental Rights — Right to Freedom",
       "authority": "Government of India / Legislative Department",
-      "url": "https://lddashboard.nic.in/sites/default/files/coi-4March2016.pdf",
+      "url": "https://lddashboard.legislative.gov.in/constitution-of-india",
       "official": true,
-      "retrieved_date": "2026-08-27"
+      "retrieved_date": "2026-08-30"
     },
     {
       "id": "CONST-ART-21",
@@ -29,9 +29,9 @@
       "jurisdiction": "India",
       "topic": "Fundamental Rights — Right to Life and Personal Liberty",
       "authority": "Government of India / Legislative Department",
-      "url": "https://lddashboard.nic.in/sites/default/files/coi-4March2016.pdf",
+      "url": "https://lddashboard.legislative.gov.in/constitution-of-india",
       "official": true,
-      "retrieved_date": "2026-08-27"
+      "retrieved_date": "2026-08-30"
     },
     {
       "id": "CONST-ART-22",
@@ -40,9 +40,9 @@
       "jurisdiction": "India",
       "topic": "Fundamental Rights — Arrest and Preventive Detention Safeguards",
       "authority": "Government of India / Legislative Department",
-      "url": "https://lddashboard.nic.in/sites/default/files/coi-4March2016.pdf",
+      "url": "https://lddashboard.legislative.gov.in/constitution-of-india",
       "official": true,
-      "retrieved_date": "2026-08-27"
+      "retrieved_date": "2026-08-30"
     },
     {
       "id": "CONST-ART-32-226",
@@ -51,9 +51,9 @@
       "jurisdiction": "India",
       "topic": "Constitutional Remedies — Judicial Review & Writs",
       "authority": "Supreme Court of India & High Courts",
-      "url": "https://lddashboard.nic.in/sites/default/files/coi-4March2016.pdf",
+      "url": "https://lddashboard.legislative.gov.in/constitution-of-india",
       "official": true,
-      "retrieved_date": "2026-08-27"
+      "retrieved_date": "2026-08-30"
     },
     {
       "id": "CRPC-ARREST-RIGHTS",
@@ -62,9 +62,9 @@
       "jurisdiction": "India",
       "topic": "Criminal Procedure — Arrest Procedure, Grounds, Memo & Intimation",
       "authority": "Ministry of Law and Justice, Government of India",
-      "url": "https://www.indiacode.nic.in/handle/123456789/1611",
+      "url": "https://www.indiacode.nic.in/bitstream/123456789/15272/1/the_code_of_criminal_procedure,_1973.pdf",
       "official": true,
-      "retrieved_date": "2026-08-27"
+      "retrieved_date": "2026-08-30"
     },
     {
       "id": "CRPC-MAGISTRATE-24HR",
@@ -73,9 +73,9 @@
       "jurisdiction": "India",
       "topic": "Criminal Procedure — Limit on Police Custody without Judicial Order",
       "authority": "Ministry of Law and Justice, Government of India",
-      "url": "https://www.indiacode.nic.in/handle/123456789/1611",
+      "url": "https://www.indiacode.nic.in/bitstream/123456789/15272/1/the_code_of_criminal_procedure,_1973.pdf",
       "official": true,
-      "retrieved_date": "2026-08-27"
+      "retrieved_date": "2026-08-30"
     },
     {
       "id": "LEGAL-AID-ART-39A",
@@ -95,9 +95,9 @@
       "jurisdiction": "India",
       "topic": "Custodial Justice — Mandatory Directives for Arresting Officers",
       "authority": "Supreme Court of India",
-      "url": "https://main.sci.gov.in/judgment",
+      "url": "https://indiankanoon.org/doc/501198/",
       "official": true,
-      "retrieved_date": "2026-08-27"
+      "retrieved_date": "2026-08-30"
     }
   ]
 }
