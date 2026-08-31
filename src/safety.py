@@ -5,23 +5,21 @@ Applies legal disclaimers, crisis escalation, and verifies citations against ret
 from typing import List, Dict, Any
 
 STANDARD_LEGAL_DISCLAIMER = (
-    "⚠️ **Legal Disclaimer**: This response provides general legal information based on verified Indian "
+    " **Legal Disclaimer**: This response provides general legal information based on verified Indian "
     "statutes and constitutional provisions retrieved by this system. It does not constitute formal legal "
     "advice or attorney-client representation. For specific legal emergencies, please consult a qualified "
     "advocate or contact your District Legal Services Authority (DLSA)."
 )
 
 OUT_OF_DOMAIN_RESPONSE = (
-    "⚖️ **Domain Boundary Notice**\n\n"
-    "I am **LUMA**, an AI assistant specialized strictly in **Indian Constitutional Law and Arrest/Detention Rights**.\n\n"
-    "Your question is outside the legal domain (e.g., Computer Science, Machine Learning, STEM, or general topics). "
-    "I cannot answer questions about machine learning algorithms, programming, or non-legal subjects.\n\n"
-    "💡 *Please ask a question related to Indian Constitutional Rights (Articles 14, 19, 21, 22), police arrest procedures, "
-    "magistrate production within 24 hours, or free legal aid under NALSA.*"
+    " **Domain Boundary Notice**\n\n"
+    "I am **LUMA**, an AI assistant specialized strictly in **Laws , Articles , Rights , Rules and Regulations**.\n\n"
+    "You can ask me about:\n \n"
+    "**Constitutional rights**, **arrest & detention**, **consumer protection**, **cyber law & privacy**, **workplace rights (POSH)**, **tenancy & property**, and **family law**\n\n"
 )
 
 OUT_OF_SCOPE_LEGAL_RESPONSE = (
-    "📚 **Knowledge Base Limitation**\n\n"
+    " **Knowledge Base Limitation**\n\n"
     "While your question appears to be related to law, it falls outside my verified knowledge base (which is focused on "
     "Indian Constitutional Rights, Fundamental Freedoms, and Arrest/Detention Safeguards under CrPC/BNSS).\n\n"
     "I am restricted from answering untested areas of law (such as Corporate Tax, Patents, or Foreign Law) to ensure 100% "

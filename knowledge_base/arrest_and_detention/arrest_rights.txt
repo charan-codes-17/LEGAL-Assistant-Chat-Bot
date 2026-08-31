@@ -1,7 +1,7 @@
 [SOURCE_ID: CRPC-ARREST-RIGHTS]
 [TITLE: Code of Criminal Procedure, 1973 (CrPC) / Bharatiya Nagarik Suraksha Sanhita, 2023 (BNSS) — Statutory Rights on Arrest]
 [AUTHORITY: Ministry of Law and Justice, Government of India]
-[URL: https://www.indiacode.nic.in/handle/123456789/1611]
+[URL: https://prsindia.org/billtrack/the-bharatiya-nagarik-suraksha-sanhita-2023]
 
 STATUTORY POWERS AND LIMITATIONS ON POLICE ARREST:
 1. Police CANNOT Arrest Arbitrarily Without Legal Grounds (CrPC Section 41 / BNSS Section 35):

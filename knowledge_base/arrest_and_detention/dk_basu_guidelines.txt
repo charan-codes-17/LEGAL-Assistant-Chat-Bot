@@ -1,7 +1,7 @@
 [SOURCE_ID: SC-DK-BASU-GUIDELINES]
 [TITLE: Supreme Court of India Landmark Judgment: D.K. Basu v. State of West Bengal (1997) 1 SCC 416]
 [AUTHORITY: Supreme Court of India]
-[URL: https://main.sci.gov.in/judgment]
+[URL: https://indiankanoon.org/doc/501198/]
 
 CONTEXT AND IMPORTANCE:
 In D.K. Basu v. State of West Bengal (AIR 1997 SC 610), the Supreme Court of India laid down mandatory requirements and preventive measures to be followed in all cases of arrest or detention till legal provisions are made in that behalf. Failure to comply makes the concerned official liable for departmental action and contempt of court.
