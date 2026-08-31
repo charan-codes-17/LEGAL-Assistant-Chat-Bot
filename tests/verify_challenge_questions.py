@@ -37,7 +37,7 @@ def main():
     print("=" * 80)
 
     for i, q in enumerate(questions, 1):
-        print(f"\n🔹 CHALLENGE QUESTION {i}:")
+        print(f"\n CHALLENGE QUESTION {i}:")
         print(f"Query: {q}")
         
         dom = classifier.classify(q)

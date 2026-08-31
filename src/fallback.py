@@ -64,11 +64,11 @@ DEMO_RESPONSES = [
             r"verify.*article\s*21",
         ],
         "answer": (
-            "### ✅ Confirmation: Yes, It is True.\n\n"
+            "### Confirmation: Yes, It is True.\n\n"
             "**Article 21 of the Constitution of India** explicitly guarantees the fundamental right to life and personal liberty.\n\n"
-            "#### 📜 Text of Article 21:\n"
+            "#### Text of Article 21:\n"
             "> *\"No person shall be deprived of his life or personal liberty except according to procedure established by law.\"*\n\n"
-            "#### ⚖️ Key Legal Principles & Precedents:\n"
+            "####  Key Legal Principles & Precedents:\n"
             "1. **Universal Guarantee**: Article 21 applies to **every person**, whether an Indian citizen or a foreigner.\n"
             "2. **Substantive Due Process (*Maneka Gandhi v. Union of India, 1978*)**: The Supreme Court established that any procedure depriving a person of life or liberty must be **\"just, fair, and reasonable\"**, and not arbitrary or oppressive.\n"
             "3. **Expansive Scope**: The Supreme Court has ruled that \"life\" does not mean mere animal existence, but the right to live with human dignity (*Francis Coralie Mullin, 1981*), including rights to privacy (*Puttaswamy, 2017*), speedy trial (*Hussainara Khatoon, 1979*), and protection against custodial violence (*D.K. Basu, 1997*).\n"
@@ -83,9 +83,9 @@ DEMO_RESPONSES = [
             r"arrest.*without\s+evidence",
         ],
         "answer": (
-            "### ❌ Clarification: No, This Statement is Incorrect.\n\n"
+            "### Clarification: No, This Statement is Incorrect.\n\n"
             "Under Indian criminal law, the police **do NOT** possess arbitrary powers to arrest any person without legal reason, credible information, or reasonable evidence.\n\n"
-            "#### ⚖️ Statutory Safeguards and Legal Limitations:\n"
+            "####  Statutory Safeguards and Legal Limitations:\n"
             "1. **Requirement of Credible Grounds (CrPC Section 41 / BNSS Section 35)**:\n"
             "   - For offences punishable with imprisonment up to 7 years, arrest cannot be made routinely. The police officer must have **credible information** or **reasonable suspicion** and must record reasons in writing satisfying statutory necessity (e.g., to prevent further offences or tampering with evidence).\n"
             "   - In the landmark judgment ***Arnesh Kumar v. State of Bihar (2014)***, the Supreme Court ruled that unauthorized or mechanical arrests make police officers liable for departmental disciplinary action and contempt of court.\n"
@@ -105,7 +105,7 @@ DEMO_RESPONSES = [
             r"arrest\s+requires\s+legal\s+grounds.*what\s+rights",
         ],
         "answer": (
-            "### 🛡️ Fundamental & Statutory Rights of an Arrested Person in India\n\n"
+            "### Fundamental & Statutory Rights of an Arrested Person in India\n\n"
             "When a person is arrested in India, the Constitution and the Code of Criminal Procedure (CrPC/BNSS) guarantee strict procedural safeguards:\n\n"
             "1. **Right to Know the Grounds of Arrest (Article 22(1) & CrPC Sec 50 / BNSS Sec 47)**:\n"
             "   - The police must immediately communicate the exact grounds of arrest and inform the person whether the offence is bailable.\n\n"
@@ -129,13 +129,13 @@ DEMO_RESPONSES = [
             r"what\s+would\s+you\s+advise.*24\s+hours",
         ],
         "answer": (
-            "### ⚖️ Legal Analysis & Procedural Remedies for Unlawful Detention\n\n"
+            "###  Legal Analysis & Procedural Remedies for Unlawful Detention\n\n"
             "If a person is detained without being informed of the grounds of arrest and is **not produced before a Judicial Magistrate within 24 hours**, the detention is **unlawful, unconstitutional, and a direct violation of fundamental rights**.\n\n"
-            "#### 📌 Violations Committed:\n"
+            "####  Violations Committed:\n"
             "1. **Article 22(1) & 22(2) Violation**: Breach of mandatory constitutional requirements to inform grounds and produce before a magistrate within 24 hours.\n"
             "2. **CrPC Section 57 / 167 Violation**: Total prohibition against police detention exceeding 24 hours without an express judicial remand order.\n"
             "3. **Wrongful Confinement**: The detaining officers may be criminally liable under IPC Section 342 (Wrongful Confinement) and face contempt of court.\n\n"
-            "#### 🚀 Recommended Immediate Legal Steps:\n"
+            "####  Recommended Immediate Legal Steps:\n"
             "1. **Immediate Writ of *Habeas Corpus***:\n"
             "   - Relatives, friends, or counsel can immediately file an urgent Writ of Habeas Corpus under **Article 226 before the jurisdictional High Court** or under **Article 32 before the Supreme Court of India**, seeking a direct court order commanding the police to produce the detainee immediately.\n"
             "2. **Approach the Chief Judicial Magistrate (CJM) / Sessions Court**:\n"

@@ -27,11 +27,11 @@ OUT_OF_SCOPE_LEGAL_RESPONSE = (
 )
 
 INSUFFICIENT_EVIDENCE_RESPONSE = (
-    "🔍 **Insufficient Evidence in Verified Knowledge Base**\n\n"
+    " **Insufficient Evidence in Verified Knowledge Base**\n\n"
     "I could not locate sufficient verified legal evidence in my indexed knowledge base to answer this query factually. "
     "To prevent hallucinating non-existent laws, acts, or constitutional provisions (such as fabricated article numbers or fictional acts), "
     "I cannot provide an unverified response.\n\n"
-    "📖 *Please check the official Constitution of India or India Code repository (https://indiacode.nic.in).* "
+    " *Please check the official Constitution of India or India Code repository (https://indiacode.nic.in).* "
 )
 
 AMBIGUOUS_QUERY_RESPONSE = (
@@ -103,7 +103,7 @@ def format_response_with_citations(
   onmouseover="this.style.borderColor='#3b82f6';this.style.background='#16181d';"
   onmouseout="this.style.borderColor='rgba(255,255,255,0.12)';this.style.background='#111214';"
   >
-    📑 View Sources <span style="color:#8a8a8a;font-weight:400;">({len(sources)} cited)</span>
+     View Sources <span style="color:#8a8a8a;font-weight:400;">({len(sources)} cited)</span>
   </summary>
   <div style="
       margin-top: 12px;
