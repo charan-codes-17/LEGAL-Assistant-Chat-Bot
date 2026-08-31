@@ -198,7 +198,7 @@ flowchart TD
 - **Session State Management**:
   - `st.session_state.messages`: List of message objects containing `role` (`user` or `assistant`), `content` (Markdown string), and `meta` (metadata dict with category, confidence, cosine score, provider, latency).
 - **Sidebar Control Center**:
-  - Provider Selector: `OpenRouter API`, `Google Gemini API`, `⚡ Offline Demo Mode`.
+  - Provider Selector: `OpenRouter API`, `Google Gemini API`, ` Offline Demo Mode`.
   - Dynamic API key inputs (password-masked) and model dropdowns.
   - Interactive Evidence Threshold slider ($0.10$ to $0.50$, default $0.22$).
   - Expandable Knowledge Base Source Inspector querying `sources_catalog`.
@@ -294,7 +294,7 @@ flowchart TD
   4. Mandatory citation attribution for every legal statement.
   5. Distinction between general statutory information and personal legal advice.
 - **Mandatory Statutory Disclaimer**:
-  > *"⚠️ **Legal Disclaimer**: This response provides general legal information based on verified Indian statutes and constitutional provisions retrieved by this system. It does not constitute formal legal advice or attorney-client representation. For specific legal emergencies, please consult a qualified advocate or contact your District Legal Services Authority (DLSA)."*
+  > *" **Legal Disclaimer**: This response provides general legal information based on verified Indian statutes and constitutional provisions retrieved by this system. It does not constitute formal legal advice or attorney-client representation. For specific legal emergencies, please consult a qualified advocate or contact your District Legal Services Authority (DLSA)."*
 - **`format_response_with_citations()`**: Appends a formatted Markdown section with verified authority names, official document titles, and direct clickable links.
 
 ---

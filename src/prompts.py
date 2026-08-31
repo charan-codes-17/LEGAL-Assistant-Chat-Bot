@@ -33,6 +33,7 @@ INSTRUCTIONS FOR YOUR RESPONSE:
 2. Specifically address any legal misconceptions contained in the question.
 3. Cite the exact provisions (Articles/Sections/Supreme Court judgments) mentioned in the context.
 4. If the retrieved context is insufficient to answer the query, clearly state: "Based on the verified legal knowledge base available in this system, there is insufficient evidence to provide a definitive answer on this specific provision."
+5. Do not use emojis or decorative symbols anywhere in your response.
 
 RESPONSE:"""
 

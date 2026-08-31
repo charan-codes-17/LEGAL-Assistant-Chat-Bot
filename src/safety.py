@@ -13,6 +13,7 @@ STANDARD_LEGAL_DISCLAIMER = (
 
 OUT_OF_DOMAIN_RESPONSE = (
     " **Domain Boundary Notice**\n\n"
+    "Your query appears to be outside LUMA’s **legal domain**.\n\n"
     "I am **LUMA**, an AI assistant specialized strictly in **Laws , Articles , Rights , Rules and Regulations**.\n\n"
     "You can ask me about:\n \n"
     "**Constitutional rights**, **arrest & detention**, **consumer protection**, **cyber law & privacy**, **workplace rights (POSH)**, **tenancy & property**, and **family law**\n\n"

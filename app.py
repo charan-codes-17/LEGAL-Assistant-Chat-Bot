@@ -449,9 +449,9 @@ if OPENROUTER_API_KEY:
 elif GROQ_API_KEY:
     provider_choice = "Groq API"
 else:
-    provider_choice = "⚡ Offline Demo Mode"
+    provider_choice = " Offline Demo Mode"
 
-demo_mode = (provider_choice == "⚡ Offline Demo Mode")
+demo_mode = (provider_choice == "Offline Demo Mode")
 openrouter_key_input = OPENROUTER_API_KEY
 openrouter_model_input = OPENROUTER_MODEL
 groq_key_input = GROQ_API_KEY

@@ -1,4 +1,4 @@
-# ⚖️ LUMA — Legal Understanding with Modern Assistance
+#  LUMA — Legal Understanding with Modern Assistance
 > **BUILD-A-BOT Competition Entry**  
 > **Theme**: Legal Assistant  
 > **Target Problem**: Empowering citizens with factual, grounded legal information on Indian Constitutional Rights and Arrest/Detention Safeguards without hallucinations.
@@ -162,7 +162,7 @@ Chat_Bot/
 
 ---
 
-## ⚖️ Legal Safety & Ethical Compliance
+##  Legal Safety & Ethical Compliance
 LUMA strictly complies with legal ethics:
 1. Provides **general legal information** and procedural literacy rather than unauthorized legal representation.
 2. Every response includes a standard **legal disclaimer**.
