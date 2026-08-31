@@ -435,7 +435,8 @@ if "messages" not in st.session_state:
                 "You can ask me about:  \n"
                 "**Constitutional rights**, **arrest & detention**, **consumer protection**, **cyber law & privacy**, **workplace rights (POSH)**, **tenancy & property**, and **family law**.  \n \n"
                 "Every answer is grounded in verified Acts, Articles, and court judgments — never guessed.\n\n"
-                "**If the evidence isn’t there, LUMA won’t make it up.**\n"
+                "**If the evidence isn’t there, LUMA won’t make it up.**\n \n"
+                " **Note:** Please phrase your question as a full sentence rather than a single word or short phrase — it helps me understand what you're really asking.\n"
                 ),
             "meta": None,
         }
