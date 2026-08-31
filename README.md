@@ -135,8 +135,9 @@ Chat_Bot/
 ├── README.md                   # Project overview & documentation
 │
 ├── knowledge_base/             # Verified legal documents
-│   ├── constitution/           # Articles 14, 19, 21, 22, 32, 226
-│   ├── arrest_and_detention/   # CrPC/BNSS, 24hr magistrate, legal aid, D.K. Basu
+│   ├── Laws/
+│   ├── Articles/
+│   ├── Rules_Regulations/
 │   └── metadata/
 │       └── sources.json        # Official sources catalog
 │
