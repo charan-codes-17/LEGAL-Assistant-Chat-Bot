@@ -1,4 +1,4 @@
-# ⚖️ LUMA — Legal Understanding with Modern Assistant
+# ⚖️ LUMA — Legal Understanding with Modern Assistance
 > **BUILD-A-BOT Competition Entry**  
 > **Theme**: Legal Assistant  
 > **Target Problem**: Empowering citizens with factual, grounded legal information on Indian Constitutional Rights and Arrest/Detention Safeguards without hallucinations.
