@@ -15,19 +15,19 @@ from src.safety import (
 SRC_ART_21 = {
     "title": "Constitution of India — Article 21: Protection of Life and Personal Liberty",
     "authority": "Government of India / Legislative Department",
-    "url": "https://lddashboard.legislative.gov.in/constitution-of-india",
+    "url": "https://www.legislative.gov.in/static/uploads/2025/07/c9fe9c9b6840524844316f74bb1c556c.pdf",
 }
 
 SRC_ART_22 = {
     "title": "Constitution of India — Article 22: Protection Against Arrest and Detention",
     "authority": "Government of India / Legislative Department",
-    "url": "https://lddashboard.legislative.gov.in/constitution-of-india",
+    "url": "https://www.legislative.gov.in/static/uploads/2025/07/c9fe9c9b6840524844316f74bb1c556c.pdf",
 }
 
 SRC_CRPC_ARREST = {
     "title": "Code of Criminal Procedure, 1973 / BNSS 2023 — Statutory Rights on Arrest",
     "authority": "Ministry of Law and Justice, Government of India",
-    "url": "https://www.indiacode.nic.in/bitstream/123456789/15272/1/the_code_of_criminal_procedure,_1973.pdf",
+    "url": "https://prsindia.org/billtrack/the-bharatiya-nagarik-suraksha-sanhita-2023",
 }
 
 SRC_CRPC_24HR = {
@@ -39,7 +39,7 @@ SRC_CRPC_24HR = {
 SRC_HABEAS_CORPUS = {
     "title": "Constitution of India — Articles 32 and 226: Writs (Habeas Corpus)",
     "authority": "Supreme Court of India & High Courts",
-    "url": "https://lddashboard.legislative.gov.in/constitution-of-india",
+    "url": "https://www.legislative.gov.in/static/uploads/2025/07/c9fe9c9b6840524844316f74bb1c556c.pdf",
 }
 
 SRC_DK_BASU = {
@@ -51,7 +51,7 @@ SRC_DK_BASU = {
 SRC_LEGAL_AID = {
     "title": "Constitution of India Article 39A & Legal Services Authorities Act, 1987",
     "authority": "National Legal Services Authority (NALSA)",
-    "url": "https://nalsa.gov.in/",
+    "url": "https://www.legislative.gov.in/static/uploads/2025/07/c9fe9c9b6840524844316f74bb1c556c.pdf",
 }
 
 
